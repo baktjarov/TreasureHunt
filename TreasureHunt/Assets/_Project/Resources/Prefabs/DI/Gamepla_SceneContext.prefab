@@ -77,3 +77,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cabbc9fa99171a4f88fa7e6f3b1bc2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _listOfAllWarriors: {fileID: 11400000, guid: 00399276518732846bd1e6fcaf535d1f, type: 2}
