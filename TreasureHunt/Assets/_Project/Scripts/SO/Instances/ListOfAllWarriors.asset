@@ -12,7 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2176f26ace6a5b84083c7c7257390c8d, type: 3}
   m_Name: ListOfAllWarriors
   m_EditorClassIdentifier: 
-  moveableObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  moveableObjects: []
