@@ -1,5 +1,6 @@
 using Attributes;
 using Gameplay;
+using Zenject;
 using System;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace Characters
 {
     public class CharacterInfo : MonoBehaviour, IMouseSelectable
     {
-        private CharacterManager charactersManager;
+        [Inject] public CharacterManager characterManager;
 
         public static Action<CharacterInfo> onSelected;
 
@@ -23,14 +24,14 @@ namespace Characters
 
         public void SetSelected(bool isSelected)
         {
-            if(selected == isSelected) { return; }
+            if (selected == isSelected) { return; }
 
             selected = isSelected;
             GetComponent<SpriteRenderer>().color = selected ? Color.green : Color.white;
 
             if (selected == true)
             {
-                foreach (CharacterInfo obj in charactersManager.listOfAllWarriors.moveableObjects)
+                foreach (CharacterInfo obj in characterManager.listOfAllWarriors.moveableObjects)
                 {
                     if (obj != this) { obj.SetSelected(false); }
                 }
