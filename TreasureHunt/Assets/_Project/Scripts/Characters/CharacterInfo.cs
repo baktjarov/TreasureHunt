@@ -8,7 +8,7 @@ namespace Characters
 {
     public class CharacterInfo : MonoBehaviour, IMouseSelectable
     {
-        [Inject] public CharacterManager characterManager;
+        [Inject] private CharacterManager characterManager;
 
         public static Action<CharacterInfo> onSelected;
 
@@ -27,7 +27,7 @@ namespace Characters
             if (selected == isSelected) { return; }
 
             selected = isSelected;
-            GetComponent<SpriteRenderer>().color = selected ? Color.green : Color.white;
+            //GetComponent<SpriteRenderer>().color = selected ? Color.green : Color.white;
 
             if (selected == true)
             {

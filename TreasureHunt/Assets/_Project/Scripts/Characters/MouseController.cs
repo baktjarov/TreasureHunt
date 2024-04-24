@@ -1,6 +1,5 @@
 using Attributes;
 using Gameplay;
-using SO;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,10 +21,14 @@ namespace Characters
         private PathFinder _pathFinder;
         private OverlayTile _currentTile;
 
+        public float _magnitude { get; private set; }
+        public bool _isMoving { get; private set; }
+
         private void Awake()
         {
             _pathFinder = new PathFinder();
             _path = new List<OverlayTile>();
+            _isMoving = false;
 
             _cursor.SetActive(false);
         }
@@ -68,7 +71,12 @@ namespace Characters
             Vector3 newPosition = Vector2.MoveTowards(_currentCharacter.transform.position, _path[0].transform.position, step);
             newPosition.z = zIndex;
 
+            bool flipped = newPosition.x < _currentCharacter.transform.position.x;
+            _currentCharacter.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
+
             _currentCharacter.transform.position = newPosition;
+            _magnitude = newPosition.magnitude;
+            _isMoving = true;
 
             if (Vector2.Distance(_currentCharacter.transform.position, _path[0].transform.position) < 0.00001f)
             {
@@ -79,6 +87,8 @@ namespace Characters
                 {
                     _currentCharacter.SetSelected(false);
                     _currentCharacter = null;
+
+                    _isMoving = false;
                 }
             }
         }

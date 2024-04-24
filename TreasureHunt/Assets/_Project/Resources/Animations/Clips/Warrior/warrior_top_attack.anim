@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: warrior_up_attack
+  m_Name: warrior_top_attack
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -26,17 +26,17 @@ AnimationClip:
       value: {fileID: -745350022, guid: 94e3a73d7602a9e4881ee64e63642624, type: 3}
     - time: 0.25
       value: {fileID: 1598654832, guid: 94e3a73d7602a9e4881ee64e63642624, type: 3}
-    - time: 0.35
+    - time: 0.36666667
       value: {fileID: 496092030, guid: 94e3a73d7602a9e4881ee64e63642624, type: 3}
-    - time: 0.48333332
+    - time: 0.5
       value: {fileID: 661303704, guid: 94e3a73d7602a9e4881ee64e63642624, type: 3}
-    - time: 0.6
+    - time: 0.6166667
       value: {fileID: -535891563, guid: 94e3a73d7602a9e4881ee64e63642624, type: 3}
-    - time: 0.73333335
+    - time: 0.71666664
       value: {fileID: -49938945, guid: 94e3a73d7602a9e4881ee64e63642624, type: 3}
-    - time: 0.85
+    - time: 0.8333333
       value: {fileID: 1795718105, guid: 94e3a73d7602a9e4881ee64e63642624, type: 3}
-    - time: 0.98333335
+    - time: 0.96666664
       value: {fileID: 1416106219, guid: 94e3a73d7602a9e4881ee64e63642624, type: 3}
     - time: 1.0833334
       value: {fileID: -2071442731, guid: 94e3a73d7602a9e4881ee64e63642624, type: 3}
