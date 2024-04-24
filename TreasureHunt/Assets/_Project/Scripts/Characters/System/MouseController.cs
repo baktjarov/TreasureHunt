@@ -21,14 +21,10 @@ namespace Characters
         private PathFinder _pathFinder;
         private OverlayTile _currentTile;
 
-        public float _magnitude { get; private set; }
-        public bool _isMoving { get; private set; }
-
         private void Awake()
         {
             _pathFinder = new PathFinder();
             _path = new List<OverlayTile>();
-            _isMoving = false;
 
             _cursor.SetActive(false);
         }
@@ -75,8 +71,7 @@ namespace Characters
             _currentCharacter.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
 
             _currentCharacter.transform.position = newPosition;
-            _magnitude = newPosition.magnitude;
-            _isMoving = true;
+            _currentCharacter._animator.SetFloat("Forward", newPosition.magnitude);
 
             if (Vector2.Distance(_currentCharacter.transform.position, _path[0].transform.position) < 0.00001f)
             {
@@ -86,9 +81,8 @@ namespace Characters
                 if (_path.Count == 0)
                 {
                     _currentCharacter.SetSelected(false);
+                    _currentCharacter._animator.SetFloat("Forward", 0);
                     _currentCharacter = null;
-
-                    _isMoving = false;
                 }
             }
         }

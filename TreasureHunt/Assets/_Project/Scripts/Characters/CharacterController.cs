@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 namespace Characters
 {
@@ -6,7 +6,13 @@ namespace Characters
     {
         [Header("Components")]
         [SerializeField] private Animator _animator;
-        [SerializeField] private MouseController _mouseController;
+
+        private MouseController _mouseController;
+
+        private void Awake()
+        {
+            _mouseController = FindObjectOfType<MouseController>();
+        }
 
         private void Update()
         {
@@ -26,4 +32,4 @@ namespace Characters
 
         }
     }
-}
+}*/

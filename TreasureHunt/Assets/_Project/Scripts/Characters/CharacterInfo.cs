@@ -11,7 +11,8 @@ namespace Characters
         [Inject] private CharacterManager characterManager;
 
         public static Action<CharacterInfo> onSelected;
-
+        
+        [field: SerializeField] public Animator _animator {get; private set;}
         [field: SerializeField, ReadOnly] public OverlayTile standingTile { get; private set; }
         [field: SerializeField, ReadOnly] public bool selected { get; private set; }
 
@@ -27,7 +28,6 @@ namespace Characters
             if (selected == isSelected) { return; }
 
             selected = isSelected;
-            //GetComponent<SpriteRenderer>().color = selected ? Color.green : Color.white;
 
             if (selected == true)
             {
