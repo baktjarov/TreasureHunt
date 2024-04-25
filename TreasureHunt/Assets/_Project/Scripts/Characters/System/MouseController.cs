@@ -48,24 +48,6 @@ namespace Characters
             {
                 IMouseSelectable selectable = GetMouseSelectableOfType<IMouseSelectable>();
 
-                /*switch (selectable)
-                {
-                    case (CharacterInfo characterInfo):
-                        {
-                            if (_currentCharacter == null) { characterInfo?.SetSelected(true); }
-                            break;
-                        }
-                    case OverlayTile overlayTile:
-                        {
-                            overlayTile?.SetSelected(true);
-                            break;
-                        }
-                    default:
-                        {
-                            break;
-                        }
-                }*/
-
                 if (selectable is CharacterInfo characterInfo)
                 {
                     if (_currentCharacter == null) { characterInfo?.SetSelected(true); }
