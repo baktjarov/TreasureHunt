@@ -46,7 +46,25 @@ namespace Characters
         {
             if (Input.GetMouseButtonDown(0))
             {
-                GetMouseSelectableOfType<IMouseSelectable>()?.SetSelected(true);
+                IMouseSelectable selectable = GetMouseSelectableOfType<IMouseSelectable>();
+
+                switch (selectable)
+                {
+                    case (CharacterInfo characterInfo):
+                        {
+                            if (_currentCharacter == null) { selectable?.SetSelected(true); }
+                            break;
+                        }
+                    case OverlayTile overlayTile:
+                        {
+                            overlayTile?.SetSelected(true);
+                            break;
+                        }
+                    default:
+                        {
+                            break;
+                        }
+                }
             }
 
             if (_path.Count > 0)
