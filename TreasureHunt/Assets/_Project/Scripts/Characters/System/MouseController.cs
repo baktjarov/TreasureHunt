@@ -12,6 +12,7 @@ namespace Characters
 
         [Header("Settings")]
         [SerializeField] private float _speed;
+        [SerializeField] private LayerMask _selectableRaycastMask;
 
         [Header("Debug")]
         [SerializeField, ReadOnly] private CharacterInfo _currentCharacter;
@@ -45,7 +46,7 @@ namespace Characters
         {
             if (Input.GetMouseButtonDown(0))
             {
-                GetMouseSelectable()?.SetSelected(true);
+                GetMouseSelectableOfType<IMouseSelectable>()?.SetSelected(true);
             }
 
             if (_path.Count > 0)
@@ -87,14 +88,6 @@ namespace Characters
             }
         }
 
-        private IMouseSelectable GetMouseSelectable()
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-
-            return hit.collider?.GetComponent<IMouseSelectable>();
-        }
-
         private T GetMouseSelectableOfType<T>()
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -109,6 +102,7 @@ namespace Characters
                 if (hit.collider.TryGetComponent<T>(out var component))
                 {
                     result = component;
+                    break;
                 }
             }
 
@@ -117,6 +111,8 @@ namespace Characters
 
         private void OnCharacterClicked(CharacterInfo character)
         {
+            if (_currentCharacter != null) { return; }
+
             _currentCharacter = character;
 
             if (_currentCharacter.standingTile == null)
