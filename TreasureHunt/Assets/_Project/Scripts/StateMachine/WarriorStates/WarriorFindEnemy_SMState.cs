@@ -1,4 +1,3 @@
-using Characters;
 using UnityEngine;
 
 namespace StateMachine
@@ -6,7 +5,7 @@ namespace StateMachine
     public class WarriorFindEnemy_SMState : StateBase
     {
         [Header("Components")]
-        [SerializeField] private CharacterStateController _character;
+        [SerializeField] private Characters.CharacterController _character;
 
         [Header("States")]
         [SerializeField] private WarriorAttack_SMState _attackState;

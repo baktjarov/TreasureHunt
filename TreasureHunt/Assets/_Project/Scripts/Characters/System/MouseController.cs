@@ -81,7 +81,8 @@ namespace Characters
             _currentCharacter.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
 
             _currentCharacter.transform.position = newPosition;
-            _currentCharacter._animator.SetFloat("Forward", newPosition.magnitude);
+            _currentCharacter.animator.SetFloat("Forward", newPosition.magnitude);
+            _currentCharacter.SetMoving(true);
 
             if (Vector2.Distance(_currentCharacter.transform.position, _path[0].transform.position) < 0.00001f)
             {
@@ -91,7 +92,8 @@ namespace Characters
                 if (_path.Count == 0)
                 {
                     _currentCharacter.SetSelected(false);
-                    _currentCharacter._animator.SetFloat("Forward", 0);
+                    _currentCharacter.SetMoving(false);
+                    _currentCharacter.animator.SetFloat("Forward", 0);
                     _currentCharacter = null;
                 }
             }

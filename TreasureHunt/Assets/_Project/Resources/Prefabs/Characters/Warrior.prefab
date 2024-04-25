@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 8968316121263825872}
+  _characterInfo: {fileID: 6715498075361576594}
   _findEnemyState: {fileID: 4793326285723599535}
 --- !u!1 &6480927102723052413
 GameObject:
@@ -190,7 +191,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -201,7 +202,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &5638287105763808601
 MonoBehaviour:
@@ -421,9 +422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb2e2b8b099bc245a8fdd685d2067d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <_animator>k__BackingField: {fileID: 4753062928059839918}
+  <animator>k__BackingField: {fileID: 4753062928059839918}
   <standingTile>k__BackingField: {fileID: 0}
   <selected>k__BackingField: 0
+  <moving>k__BackingField: 0
 --- !u!114 &3595443664738551307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,5 +452,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentState: {fileID: 0}
   _startState: {fileID: 4793326285723599535}
-  _visionSensor: {fileID: 5638287105763808601}
   _currentVisibleEnemies: []
+  _visionSensor: {fileID: 5638287105763808601}
