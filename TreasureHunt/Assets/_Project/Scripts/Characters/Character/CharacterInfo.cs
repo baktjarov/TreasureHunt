@@ -13,6 +13,8 @@ namespace Characters
         public static Action<CharacterInfo> onSelected;
 
         [field: SerializeField] public Animator animator { get; private set; }
+        [field: SerializeField] public AnimationEvents animationEvents{ get; private set; }
+
         [field: SerializeField, ReadOnly] public OverlayTile standingTile { get; private set; }
         [field: SerializeField, ReadOnly] public bool selected { get; private set; }
         [field: SerializeField, ReadOnly] public bool moving { get; private set; }

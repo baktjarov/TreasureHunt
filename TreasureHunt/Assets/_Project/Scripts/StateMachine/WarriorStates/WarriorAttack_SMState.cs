@@ -1,4 +1,5 @@
 using System.Linq;
+using Interfaces;
 using TagComponents;
 using UnityEngine;
 
@@ -10,10 +11,24 @@ namespace StateMachine
         [SerializeField] private Characters.CharacterController _character;
         [SerializeField] private Characters.CharacterInfo _characterInfo;
 
+        [Header("Settings")]
+        [SerializeField] private string _damageAnimKey = "isDamaging";
+        [SerializeField] private float _damage = 25;
+
         [Header("States")]
         [SerializeField] private WarriorFindEnemy_SMState _findEnemyState;
 
         private TagComponentBase _currentEnemy = null;
+
+        private void OnEnable()
+        {
+            _characterInfo.animationEvents.onAnimationEvent += OnAnimationEvent;
+        }
+
+        private void OnDisable()
+        {
+            _characterInfo.animationEvents.onAnimationEvent -= OnAnimationEvent;
+        }
 
         public override void Enter()
         {
@@ -32,6 +47,19 @@ namespace StateMachine
             {
                 _characterInfo.animator.SetBool("Attack", false);
                 _nextState = _findEnemyState;
+            }
+        }
+
+        private void OnAnimationEvent(string key)
+        {
+            if (_damageAnimKey == key)
+            {
+                var damagable = _character.currentVisiableEnemies.ElementAt(0).GetComponent<IHealth>();
+
+                if (damagable != null)
+                {
+                    damagable.TakeDamage(_damage);
+                }
             }
         }
     }

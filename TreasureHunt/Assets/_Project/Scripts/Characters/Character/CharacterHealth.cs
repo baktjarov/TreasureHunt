@@ -10,13 +10,8 @@ namespace Characters
         public Action<float> onHealthChanged { get; set; }
 
         public bool isAlive { get; private set; }
-        public float currentHealth { get; private set; }
-
-        private void Start()
-        {
-            currentHealth = 100;
-        }
-
+        public float currentHealth { get; private set; } = 100;
+        
         private void Update()
         {
             if (!isAlive && currentHealth <= 0)
