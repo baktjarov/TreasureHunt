@@ -6,12 +6,14 @@ namespace Characters
 {
     public class CharacterManager : MonoBehaviour
     {
-        [Inject] public ListOfAllWarriors listOfAllWarriors { get; private set; }
+        [Inject] public ListOfAllCharacters listOfAllWarriors { get; private set; }
         
         private void Awake()
         {
             var characters = FindObjectsOfType<CharacterInfo>();
-            listOfAllWarriors.Initialize(characters);
+            var enemies = FindObjectsOfType<EnemyInfo>();
+
+            listOfAllWarriors.Initialize(characters, enemies);
         }
     }
 }

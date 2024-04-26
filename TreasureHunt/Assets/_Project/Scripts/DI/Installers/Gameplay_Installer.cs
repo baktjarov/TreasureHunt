@@ -10,7 +10,7 @@ namespace DI.Installers
 {
     public class Gameplay_Installer : MonoInstaller
     {
-        [SerializeField] private ListOfAllWarriors _listOfAllWarriors;
+        [SerializeField] private ListOfAllCharacters _listOfAllWarriors;
         [SerializeField] private CharacterManager _characterManager;
 
         private Signal _onGoToMainMenuRequested = new Signal();
