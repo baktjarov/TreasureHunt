@@ -42,10 +42,34 @@ namespace StateMachine
             if (_character.currentVisiableEnemies.Count > 0) { _currentEnemy = _character.currentVisiableEnemies.ElementAt(0); }
             else { _currentEnemy = null; }
 
-            if (_currentEnemy != null && _characterInfo.moving == false) { _characterInfo.animator.SetBool("Attack", true); }
+            if (_currentEnemy != null && _characterInfo.moving == false)
+            {
+                Vector3 enemyPosition = _character.currentVisiableEnemies.ElementAt(0).transform.position;
+                Vector3 playerPosition = transform.position;
+
+                bool flipped = playerPosition.x > enemyPosition.x;
+                _character.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
+
+                float deltaX = enemyPosition.x - playerPosition.x;
+                float deltaY = enemyPosition.y - playerPosition.y;
+
+                if (Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
+                {
+                    _characterInfo.animator.SetBool("Attack", true);
+                    _characterInfo.animator.SetFloat("LastHorizontal", deltaX);
+                }
+                else if (Mathf.Abs(deltaX) < Mathf.Abs(deltaY))
+                {
+                    _characterInfo.animator.SetBool("Attack", true);
+                    _characterInfo.animator.SetFloat("LastVertical", deltaY);
+                }
+            }
             else
             {
-                _characterInfo.animator.SetBool("Attack", false);
+                _characterInfo.animator.SetBool("Attack", false); _characterInfo.animator.SetBool("Attack", false);
+                _characterInfo.animator.SetFloat("LastHorizontal", 0);
+                _characterInfo.animator.SetFloat("LastVertical", 0);
+
                 _nextState = _findEnemyState;
             }
         }
