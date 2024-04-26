@@ -58,7 +58,7 @@ namespace Characters
                 }
             }
 
-            if (_path.Count > 0)
+            if (_path.Count > 0 && _currentCharacter.animator.GetBool("Attack") == false)
             {
                 MoveAlongPath();
             }
@@ -82,7 +82,6 @@ namespace Characters
 
             _currentCharacter.transform.position = newPosition;
             _currentCharacter.animator.SetFloat("Forward", newPosition.magnitude);
-            _currentCharacter.SetMoving(true);
 
             if (Vector2.Distance(_currentCharacter.transform.position, _path[0].transform.position) < 0.00001f)
             {
@@ -92,7 +91,6 @@ namespace Characters
                 if (_path.Count == 0)
                 {
                     _currentCharacter.SetSelected(false);
-                    _currentCharacter.SetMoving(false);
                     _currentCharacter.animator.SetFloat("Forward", 0);
                     _currentCharacter = null;
                 }

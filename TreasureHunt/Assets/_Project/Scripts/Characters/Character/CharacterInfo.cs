@@ -17,7 +17,6 @@ namespace Characters
 
         [field: SerializeField, ReadOnly] public OverlayTile standingTile { get; private set; }
         [field: SerializeField, ReadOnly] public bool selected { get; private set; }
-        [field: SerializeField, ReadOnly] public bool moving { get; private set; }
 
         public void SetStandingTile(OverlayTile tile)
         {
@@ -41,12 +40,6 @@ namespace Characters
 
                 onSelected?.Invoke(this);
             }
-        }
-
-        public void SetMoving(bool isMoving)
-        {
-            if (moving == isMoving) { return; }
-            moving = isMoving;
         }
     }
 }
