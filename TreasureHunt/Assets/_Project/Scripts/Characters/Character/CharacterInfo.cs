@@ -1,31 +1,18 @@
+using System;
 using Attributes;
 using Gameplay;
-using Zenject;
-using System;
-using UnityEngine;
 using SO;
+using UnityEngine;
 
 namespace Characters
 {
-    public class CharacterInfo : MonoBehaviour, IMouseSelectable
+    public class CharacterInfo : UnitInfo, IMouseSelectable
     {
-        [Inject] private ListOfAllCharacters listOfAllCharacters;
+        [SerializeField] private ListOfAllUnits listOfAllUnits;
 
         public static Action<CharacterInfo> onSelected;
 
-        [field: SerializeField] public Animator animator { get; private set; }
-        [field: SerializeField] public AnimationEvents animationEvents { get; private set; }
-
-        [field: SerializeField, ReadOnly] public OverlayTile standingTile { get; private set; }
         [field: SerializeField, ReadOnly] public bool selected { get; private set; }
-        [field: SerializeField, ReadOnly] public bool moving { get; private set; }
-
-        public void SetStandingTile(OverlayTile tile)
-        {
-            if (tile == null) { return; }
-
-            standingTile = tile;
-        }
 
         public void SetSelected(bool isSelected)
         {
@@ -35,19 +22,13 @@ namespace Characters
 
             if (selected == true)
             {
-                foreach (CharacterInfo obj in listOfAllCharacters.moveableObjects)
+                foreach (CharacterInfo obj in listOfAllUnits.moveableObjects)
                 {
                     if (obj != this) { obj.SetSelected(false); }
                 }
 
                 onSelected?.Invoke(this);
             }
-        }
-
-        public void SetMoving(bool isMoving)
-        {
-            if (moving == isMoving) { return; }
-            moving = isMoving;
         }
     }
 }

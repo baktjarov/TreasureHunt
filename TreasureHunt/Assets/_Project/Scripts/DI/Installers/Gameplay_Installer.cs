@@ -9,7 +9,7 @@ namespace DI.Installers
 {
     public class Gameplay_Installer : MonoInstaller
     {
-        [SerializeField] private ListOfAllCharacters _listOfAllWarriors;
+        [SerializeField] private ListOfAllUnits _listOfAllUnits;
 
         private Signal _onGoToMainMenuRequested = new Signal();
 
@@ -30,7 +30,7 @@ namespace DI.Installers
         public override void InstallBindings()
         {
             Container.Bind<Signal>().WithId(EventStrings.onGoToMainMenuRequested).FromInstance(_onGoToMainMenuRequested).AsSingle();
-            Container.BindInstance(_listOfAllWarriors).AsSingle();
+            Container.BindInstance(_listOfAllUnits).AsSingle();
         }
     }
 }

@@ -9,16 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2176f26ace6a5b84083c7c7257390c8d, type: 3}
-  m_Name: ListOfAllCharacters
+  m_Script: {fileID: 11500000, guid: 917f144d40d8c0040926abfd4b29e4fc, type: 3}
+  m_Name: ListOfAllUnits
   m_EditorClassIdentifier: 
-  moveableObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  enemiesList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  unitsList: []

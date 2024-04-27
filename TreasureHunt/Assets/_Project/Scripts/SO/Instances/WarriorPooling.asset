@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f45a6d5943695c46a3110d206ae6296, type: 3}
   m_Name: WarriorPooling
   m_EditorClassIdentifier: 
-  _targetObject: {fileID: 6715498075361576594, guid: 0c123db3edbb20940b1f59664b4dda72, type: 3}
+  _targetObject: {fileID: 7281975773521999022, guid: 0c123db3edbb20940b1f59664b4dda72, type: 3}
   _spawnIfPoolIsEmpty: 4
-  _parentName: WarriorList
+  _parentName: WarriorPool

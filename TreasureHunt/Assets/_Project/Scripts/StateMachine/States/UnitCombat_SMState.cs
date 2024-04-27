@@ -6,18 +6,18 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class TorchGoblinAttack_SMState : StateBase
+    public class UnitCombat_SMState : StateBase
     {
         [Header("Components")]
-        [SerializeField] private EnemyController _character;
-        [SerializeField] private EnemyInfo _characterInfo;
+        [SerializeField] private UnitStateMachineBase _character;
+        [SerializeField] private UnitInfo _characterInfo;
 
         [Header("Settings")]
         [SerializeField] private string _damageAnimKey = "isDamaging";
         [SerializeField] private float _damage = 25;
 
         [Header("States")]
-        [SerializeField] private TorchGoblinFindPlayer_SMState _findEnemyState;
+        [SerializeField] private UnitFindCharacter_SMState _findCharacterState;
 
         private TagComponentBase _currentEnemy = null;
 
@@ -43,7 +43,7 @@ namespace StateMachine
             if (_character.currentVisiableEnemies.Count > 0) { _currentEnemy = _character.currentVisiableEnemies.ElementAt(0); }
             else { _currentEnemy = null; }
 
-            if (_currentEnemy != null)
+            if (_currentEnemy != null && _characterInfo.moving == false)
             {
                 Vector3 playerPosition = _character.currentVisiableEnemies.ElementAt(0).transform.position;
                 Vector3 enemyPosition = transform.position;
@@ -71,7 +71,7 @@ namespace StateMachine
                 _characterInfo.animator.SetFloat("LastHorizontal", 0);
                 _characterInfo.animator.SetFloat("LastVertical", 0);
 
-                _nextState = _findEnemyState;
+                _nextState = _findCharacterState;
             }
         }
 

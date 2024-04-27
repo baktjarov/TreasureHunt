@@ -1,18 +1,16 @@
-using System.Collections;
 using Attributes;
 using Gameplay;
-using SO;
 using UnityEngine;
 
 namespace Characters
 {
-    public class EnemyInfo : MonoBehaviour
+    public class UnitInfo : MonoBehaviour
     {
         [field: SerializeField] public Animator animator { get; private set; }
         [field: SerializeField] public AnimationEvents animationEvents { get; private set; }
 
-        [field: SerializeField, ReadOnly] public OverlayTile standingTile { get; private set; }
-        [field: SerializeField, ReadOnly] public bool moving { get; private set; }
+        [ReadOnly] public OverlayTile standingTile;
+        [ReadOnly] public bool moving;
 
         public void SetStandingTile(OverlayTile tile)
         {
@@ -20,10 +18,10 @@ namespace Characters
 
             standingTile = tile;
         }
-
         public void SetMoving(bool isMoving)
         {
             if (moving == isMoving) { return; }
+
             moving = isMoving;
         }
     }

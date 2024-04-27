@@ -1,15 +1,14 @@
-using Characters;
 using UnityEngine;
 
 namespace StateMachine
 {
-    public class TorchGoblinFindPlayer_SMState : StateBase
+    public class UnitFindCharacter_SMState : StateBase
     {
         [Header("Components")]
-        [SerializeField] private EnemyController _character;
+        [SerializeField] private UnitStateMachineBase _character;
 
         [Header("States")]
-        [SerializeField] private TorchGoblinAttack_SMState _attackState;
+        [SerializeField] private UnitCombat_SMState _combatState;
 
         public override void Enter()
         {
@@ -22,7 +21,7 @@ namespace StateMachine
 
             if (_character.currentVisiableEnemies.Count > 0)
             {
-                _nextState = _attackState;
+                _nextState = _combatState;
             }
         }
     }

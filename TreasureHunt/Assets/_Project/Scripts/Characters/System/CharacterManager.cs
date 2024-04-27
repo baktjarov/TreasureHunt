@@ -1,13 +1,12 @@
 using System.Collections.Generic;
 using SO;
 using UnityEngine;
-using Zenject;
 
 namespace Characters
 {
     public class CharacterManager : MonoBehaviour
     {
-        [Inject] private ListOfAllCharacters listOfAllCharacters;
+        [SerializeField] private ListOfAllUnits listOfAllUnits;
 
         [Header("Components")]
         [SerializeField] private WarriorPooling _warriorPooling;
@@ -38,16 +37,15 @@ namespace Characters
 
             foreach (var goblinObject in goblinObjects)
             {
-                var goblinEnemy = goblinObject.GetComponent<EnemyInfo>();
-                if (goblinEnemy != null)
+                var enemy = goblinObject.GetComponent<EnemyInfo>();
+                if (enemy != null)
                 {
-                    enemies.Add(goblinEnemy);
-                    _torchGoblinPooling.Put(goblinEnemy);
+                    enemies.Add(enemy);
+                    _torchGoblinPooling.Put(enemy);
                 }
             }
 
-            listOfAllCharacters.Initialize(characters.ToArray(), enemies.ToArray());
+            listOfAllUnits.Initialize(enemies.ToArray(), characters.ToArray());
         }
-
     }
 }

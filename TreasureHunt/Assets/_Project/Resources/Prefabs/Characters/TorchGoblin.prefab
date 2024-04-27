@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4589205263706451629}
-  - component: {fileID: 119470816825946751}
+  - component: {fileID: 990484658781537976}
   m_Layer: 0
   m_Name: FindPlayerState
   m_TagString: Untagged
@@ -65,7 +65,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4882013856068606993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &119470816825946751
+--- !u!114 &990484658781537976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,11 +74,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 306719093286059601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19fea2314551cca438167fd849e4781e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c58a6931e519504e9af4419291ee8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 7988306696111710684}
-  _attackState: {fileID: 7544589704428645634}
+  _combatState: {fileID: 8226032764020509945}
 --- !u!1 &3184498553189260416
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 5914106820322163481}
   - component: {fileID: 2583167826707642291}
   - component: {fileID: 684215701658709003}
-  - component: {fileID: 2808126011109080316}
+  - component: {fileID: 3486819875087188788}
   - component: {fileID: 4631729027425119453}
   - component: {fileID: 7988306696111710684}
   m_Layer: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961e2f323b0e1ba4ea26e04f9b7c8305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2808126011109080316
+--- !u!114 &3486819875087188788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -322,14 +322,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4843410793780978838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a313b1c371348b419f6595ff65647ad, type: 3}
+  m_Script: {fileID: 11500000, guid: ed7b3acbfb19a4342b32a9c624f39604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <animator>k__BackingField: {fileID: 5382458658527290086}
   <animationEvents>k__BackingField: {fileID: 5459055111920190172}
-  <standingTile>k__BackingField: {fileID: 0}
-  <moving>k__BackingField: 0
-  _pooling: {fileID: 11400000, guid: c53f71fd04f948344a62644f49205883, type: 2}
+  standingTile: {fileID: 0}
+  moving: 0
 --- !u!114 &4631729027425119453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,9 +354,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentState: {fileID: 0}
-  _startState: {fileID: 119470816825946751}
-  _currentVisibleEnemies: []
+  _startState: {fileID: 990484658781537976}
   _visionSensor: {fileID: 4191912811056314202}
+  _currentVisibleEnemies: []
 --- !u!1 &7228747759914788568
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,9 +366,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 50198144976462689}
-  - component: {fileID: 7544589704428645634}
+  - component: {fileID: 8226032764020509945}
   m_Layer: 0
-  m_Name: AttackState
+  m_Name: CombatState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,7 +389,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4882013856068606993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7544589704428645634
+--- !u!114 &8226032764020509945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -399,14 +398,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7228747759914788568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf1d8e21a01300439419eec31697ae7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1987cc02564b4d64eb9df9482ef6850f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 7988306696111710684}
-  _characterInfo: {fileID: 2808126011109080316}
+  _characterInfo: {fileID: 3486819875087188788}
   _damageAnimKey: isDamaging
   _damage: 0
-  _findEnemyState: {fileID: 119470816825946751}
+  _findCharacterState: {fileID: 990484658781537976}
 --- !u!1 &7703369452988202804
 GameObject:
   m_ObjectHideFlags: 0

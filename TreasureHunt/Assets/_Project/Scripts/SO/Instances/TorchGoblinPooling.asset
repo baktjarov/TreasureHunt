@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5fbbb7a996d9a84eb0f686e707e718d, type: 3}
   m_Name: TorchGoblinPooling
   m_EditorClassIdentifier: 
-  _targetObject: {fileID: 2808126011109080316, guid: 0b7774daf1f92d044afb7850556e943d, type: 3}
+  _targetObject: {fileID: 3486819875087188788, guid: 0b7774daf1f92d044afb7850556e943d, type: 3}
   _spawnIfPoolIsEmpty: 4
-  _parentName: TorchGoblinList
+  _parentName: TorchGoblinPool
