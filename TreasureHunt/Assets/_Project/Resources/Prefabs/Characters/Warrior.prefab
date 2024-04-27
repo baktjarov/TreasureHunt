@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 4204642175462663524}
   - component: {fileID: 7318249907472156184}
   - component: {fileID: 7281975773521999022}
-  - component: {fileID: 3595443664738551307}
+  - component: {fileID: 6155350244024139649}
   - component: {fileID: 8968316121263825872}
   m_Layer: 0
   m_Name: Warrior
@@ -480,7 +480,7 @@ MonoBehaviour:
   moving: 0
   listOfAllUnits: {fileID: 11400000, guid: 3e8f191ee2c4fa14d8b62a743ca62968, type: 2}
   <selected>k__BackingField: 0
---- !u!114 &3595443664738551307
+--- !u!114 &6155350244024139649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7691296355829876161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8585422f2d494d419cc8b5dc1397275, type: 3}
+  m_Script: {fileID: 11500000, guid: a1203f9bd848c544dbf51574e22ed411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8968316121263825872

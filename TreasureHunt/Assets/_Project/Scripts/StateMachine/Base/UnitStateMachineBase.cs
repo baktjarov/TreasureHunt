@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Characters;
 using Sensors;
 using TagComponents;
 using UnityEngine;

@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 2583167826707642291}
   - component: {fileID: 684215701658709003}
   - component: {fileID: 3486819875087188788}
-  - component: {fileID: 4631729027425119453}
+  - component: {fileID: 8632868141372247647}
   - component: {fileID: 7988306696111710684}
   m_Layer: 0
   m_Name: TorchGoblin
@@ -329,7 +329,7 @@ MonoBehaviour:
   <animationEvents>k__BackingField: {fileID: 5459055111920190172}
   standingTile: {fileID: 0}
   moving: 0
---- !u!114 &4631729027425119453
+--- !u!114 &8632868141372247647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4843410793780978838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ccf3f17227fbe74a97bdd04aed2ded5, type: 3}
+  m_Script: {fileID: 11500000, guid: a1203f9bd848c544dbf51574e22ed411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7988306696111710684
