@@ -3,6 +3,8 @@ using Gameplay;
 using Zenject;
 using System;
 using UnityEngine;
+using SO;
+using System.Collections;
 
 namespace Characters
 {
@@ -18,6 +20,29 @@ namespace Characters
         [field: SerializeField, ReadOnly] public OverlayTile standingTile { get; private set; }
         [field: SerializeField, ReadOnly] public bool selected { get; private set; }
         [field: SerializeField, ReadOnly] public bool moving { get; private set; }
+
+        [SerializeField] private WarriorPooling _pooling;
+
+        public void Inititlize(WarriorPooling pooling)
+        {
+            _pooling = pooling;
+        }
+
+        private void OnEnable()
+        {
+            StartCoroutine(Put_Coroutine());
+        }
+
+        private void OnDisable()
+        {
+            StopCoroutine(Put_Coroutine());
+        }
+
+        private IEnumerator Put_Coroutine()
+        {
+            yield return null;
+            _pooling.Put(this);
+        }
 
         public void SetStandingTile(OverlayTile tile)
         {

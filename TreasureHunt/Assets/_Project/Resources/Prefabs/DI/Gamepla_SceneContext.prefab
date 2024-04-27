@@ -78,3 +78,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _listOfAllWarriors: {fileID: 11400000, guid: 00399276518732846bd1e6fcaf535d1f, type: 2}
+  _characterManager: {fileID: 7219954786705776242, guid: 4376951276062d94c91ed5d8c322869a, type: 3}

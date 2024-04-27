@@ -1,5 +1,7 @@
+using System.Collections;
 using Attributes;
 using Gameplay;
+using SO;
 using UnityEngine;
 
 namespace Characters
@@ -11,6 +13,29 @@ namespace Characters
 
         [field: SerializeField, ReadOnly] public OverlayTile standingTile { get; private set; }
         [field: SerializeField, ReadOnly] public bool moving { get; private set; }
+
+        [SerializeField] private TorchGoblinPooling _pooling;
+
+        public void Inititlize(TorchGoblinPooling pooling)
+        {
+            _pooling = pooling;
+        }
+
+        private void OnEnable()
+        {
+            StartCoroutine(Put_Coroutine());
+        }
+
+        private void OnDisable()
+        {
+            StopCoroutine(Put_Coroutine());
+        }
+
+        private IEnumerator Put_Coroutine()
+        {
+            yield return null;
+            _pooling.Put(this);
+        }
 
         public void SetStandingTile(OverlayTile tile)
         {

@@ -46,6 +46,32 @@ namespace SO
             return result;
         }
 
+        public T[] GetList(int count)
+        {
+            List<T> result = new List<T>();
+
+            for (int i = 0; i < count; i++)
+            {
+                if (_targetsPool.TryDequeue(out T obj))
+                {
+                    result.Add(obj);
+                }
+                else
+                {
+                    Spawn(_spawnIfPoolIsEmpty);
+                    result.Add(_targetsPool.Dequeue());
+                }
+            }
+
+            foreach (var obj in result)
+            {
+                obj.gameObject.SetActive(true);
+                obj.transform.SetParent(null, false);
+            }
+
+            return result.ToArray();
+        }
+
         public void Put(T toPut)
         {
             toPut.transform.position = Vector3.zero;

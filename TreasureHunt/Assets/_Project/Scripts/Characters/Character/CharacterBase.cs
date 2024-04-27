@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using SO;
 using UnityEngine;
 
@@ -30,4 +30,4 @@ namespace Characters
             yield return null;
         }
     }
-}
+}*/

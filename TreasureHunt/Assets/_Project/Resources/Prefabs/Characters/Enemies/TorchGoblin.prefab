@@ -211,7 +211,6 @@ GameObject:
   - component: {fileID: 5914106820322163481}
   - component: {fileID: 2583167826707642291}
   - component: {fileID: 684215701658709003}
-  - component: {fileID: 3310474613859147511}
   - component: {fileID: 2808126011109080316}
   - component: {fileID: 4631729027425119453}
   - component: {fileID: 7988306696111710684}
@@ -314,19 +313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961e2f323b0e1ba4ea26e04f9b7c8305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3310474613859147511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4843410793780978838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dced430c6a1840942a5a8e6c0416ec6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pooling: {fileID: 11400000, guid: c53f71fd04f948344a62644f49205883, type: 2}
 --- !u!114 &2808126011109080316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +329,7 @@ MonoBehaviour:
   <animationEvents>k__BackingField: {fileID: 5459055111920190172}
   <standingTile>k__BackingField: {fileID: 0}
   <moving>k__BackingField: 0
+  _pooling: {fileID: 11400000, guid: c53f71fd04f948344a62644f49205883, type: 2}
 --- !u!114 &4631729027425119453
 MonoBehaviour:
   m_ObjectHideFlags: 0

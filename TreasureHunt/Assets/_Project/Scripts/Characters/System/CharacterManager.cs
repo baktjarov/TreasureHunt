@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using SO;
 using UnityEngine;
 using Zenject;
@@ -14,24 +15,37 @@ namespace Characters
 
         private void Awake()
         {
-            PoolCharacters();
-        }
-
-        private void PoolCharacters()
-        {
-            var warrior = _warriorPooling.Get();
-            warrior.Inititlize(_warriorPooling);
-
-            var enemy = _torchGoblinPooling.Get();
-            enemy.Inititlize(_torchGoblinPooling);
+            SetCharactersList();
         }
 
         private void SetCharactersList()
         {
-            var characters = FindObjectsOfType<CharacterInfo>();
-            var enemies = FindObjectsOfType<EnemyInfo>();
+            var warriorObjects = _warriorPooling.GetList(4);
+            var goblinObjects = _torchGoblinPooling.GetList(4);
 
-            listOfAllWarriors.Initialize(characters, enemies);
+            List<CharacterInfo> characters = new List<CharacterInfo>();
+            List<EnemyInfo> enemies = new List<EnemyInfo>();
+
+            foreach (var warriorObject in warriorObjects)
+            {
+                var character = warriorObject.GetComponent<CharacterInfo>();
+                if (character != null)
+                {
+                    characters.Add(character);
+                }
+            }
+
+            foreach (var goblinObject in goblinObjects)
+            {
+                var goblinEnemy = goblinObject.GetComponent<EnemyInfo>();
+                if (goblinEnemy != null)
+                {
+                    enemies.Add(goblinEnemy);
+                }
+            }
+
+            listOfAllWarriors.Initialize(characters.ToArray(), enemies.ToArray());
         }
+
     }
 }
