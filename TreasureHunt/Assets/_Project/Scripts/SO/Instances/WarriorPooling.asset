@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2176f26ace6a5b84083c7c7257390c8d, type: 3}
-  m_Name: ListOfAllCharacters
+  m_Script: {fileID: 11500000, guid: 9f45a6d5943695c46a3110d206ae6296, type: 3}
+  m_Name: WarriorPooling
   m_EditorClassIdentifier: 
-  moveableObjects: []
-  enemiesList: []
+  _targetObject: {fileID: 7982732127826475465, guid: 0c123db3edbb20940b1f59664b4dda72, type: 3}
+  _spawnIfPoolIsEmpty: 4
+  _parentName: WarriorList

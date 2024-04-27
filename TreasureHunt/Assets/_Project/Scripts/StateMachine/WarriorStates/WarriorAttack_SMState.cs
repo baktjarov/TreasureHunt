@@ -42,7 +42,7 @@ namespace StateMachine
             if (_character.currentVisiableEnemies.Count > 0) { _currentEnemy = _character.currentVisiableEnemies.ElementAt(0); }
             else { _currentEnemy = null; }
 
-            if (_currentEnemy != null)
+            if (_currentEnemy != null && _characterInfo.moving == false)
             {
                 Vector3 enemyPosition = _character.currentVisiableEnemies.ElementAt(0).transform.position;
                 Vector3 playerPosition = transform.position;

@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8691057694957836963}
-  - component: {fileID: 7194949545829775213}
+  - component: {fileID: 799904391057509099}
   - component: {fileID: 5638287105763808601}
   m_Layer: 0
   m_Name: warriorSensor
@@ -161,8 +161,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6334335241994462326}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7194949545829775213
-BoxCollider2D:
+--- !u!68 &799904391057509099
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -194,18 +194,26 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.5}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.4981245, y: 0.49371463}
+  - {x: -1.5057378, y: -0.32650298}
+  - {x: -0.4394824, y: -0.3371994}
+  - {x: -0.45157808, y: -1.0021917}
+  - {x: 0.40862197, y: -1.0055124}
+  - {x: 0.40562397, y: -0.31338388}
+  - {x: 1.413793, y: -0.31018728}
+  - {x: 1.4127803, y: -0.15458514}
+  - {x: 1.4086123, y: 0.48584986}
+  - {x: 0.3735528, y: 0.48569962}
+  - {x: 0.3693617, y: 1.2500217}
+  - {x: -0.4015854, y: 1.253056}
+  - {x: -0.4073575, y: 0.48461592}
+  - {x: -1.4978622, y: 0.49054766}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!114 &5638287105763808601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,6 +361,7 @@ GameObject:
   - component: {fileID: 4204642175462663524}
   - component: {fileID: 7318249907472156184}
   - component: {fileID: 6715498075361576594}
+  - component: {fileID: 7982732127826475465}
   - component: {fileID: 3595443664738551307}
   - component: {fileID: 8968316121263825872}
   m_Layer: 0
@@ -471,6 +480,19 @@ MonoBehaviour:
   <standingTile>k__BackingField: {fileID: 0}
   <selected>k__BackingField: 0
   <moving>k__BackingField: 0
+--- !u!114 &7982732127826475465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7691296355829876161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0c013607a97b644919f931a7c340fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pooling: {fileID: 11400000, guid: b6dd583c5424b3c4797f001d04223537, type: 2}
 --- !u!114 &3595443664738551307
 MonoBehaviour:
   m_ObjectHideFlags: 0

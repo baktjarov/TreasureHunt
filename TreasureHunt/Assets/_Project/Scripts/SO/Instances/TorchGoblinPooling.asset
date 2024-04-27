@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2176f26ace6a5b84083c7c7257390c8d, type: 3}
-  m_Name: ListOfAllCharacters
+  m_Script: {fileID: 11500000, guid: f5fbbb7a996d9a84eb0f686e707e718d, type: 3}
+  m_Name: TorchGoblinPooling
   m_EditorClassIdentifier: 
-  moveableObjects: []
-  enemiesList: []
+  _targetObject: {fileID: 3310474613859147511, guid: 0b7774daf1f92d044afb7850556e943d, type: 3}
+  _spawnIfPoolIsEmpty: 8
+  _parentName: TorchGoblinList
