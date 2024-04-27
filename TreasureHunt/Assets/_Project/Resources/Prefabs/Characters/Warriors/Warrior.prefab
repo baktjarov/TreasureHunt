@@ -479,7 +479,6 @@ MonoBehaviour:
   <standingTile>k__BackingField: {fileID: 0}
   <selected>k__BackingField: 0
   <moving>k__BackingField: 0
-  _pooling: {fileID: 11400000, guid: b6dd583c5424b3c4797f001d04223537, type: 2}
 --- !u!114 &3595443664738551307
 MonoBehaviour:
   m_ObjectHideFlags: 0

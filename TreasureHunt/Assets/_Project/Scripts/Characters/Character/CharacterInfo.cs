@@ -4,13 +4,12 @@ using Zenject;
 using System;
 using UnityEngine;
 using SO;
-using System.Collections;
 
 namespace Characters
 {
     public class CharacterInfo : MonoBehaviour, IMouseSelectable
     {
-        [Inject] private CharacterManager characterManager;
+        [Inject] private ListOfAllCharacters listOfAllCharacters;
 
         public static Action<CharacterInfo> onSelected;
 
@@ -20,29 +19,6 @@ namespace Characters
         [field: SerializeField, ReadOnly] public OverlayTile standingTile { get; private set; }
         [field: SerializeField, ReadOnly] public bool selected { get; private set; }
         [field: SerializeField, ReadOnly] public bool moving { get; private set; }
-
-        [SerializeField] private WarriorPooling _pooling;
-
-        public void Inititlize(WarriorPooling pooling)
-        {
-            _pooling = pooling;
-        }
-
-        private void OnEnable()
-        {
-            StartCoroutine(Put_Coroutine());
-        }
-
-        private void OnDisable()
-        {
-            StopCoroutine(Put_Coroutine());
-        }
-
-        private IEnumerator Put_Coroutine()
-        {
-            yield return null;
-            _pooling.Put(this);
-        }
 
         public void SetStandingTile(OverlayTile tile)
         {
@@ -59,7 +35,7 @@ namespace Characters
 
             if (selected == true)
             {
-                foreach (CharacterInfo obj in characterManager.listOfAllWarriors.moveableObjects)
+                foreach (CharacterInfo obj in listOfAllCharacters.moveableObjects)
                 {
                     if (obj != this) { obj.SetSelected(false); }
                 }

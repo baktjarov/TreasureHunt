@@ -7,7 +7,7 @@ namespace Characters
 {
     public class CharacterManager : MonoBehaviour
     {
-        [Inject] public ListOfAllCharacters listOfAllWarriors { get; private set; }
+        [Inject] private ListOfAllCharacters listOfAllCharacters;
 
         [Header("Components")]
         [SerializeField] private WarriorPooling _warriorPooling;
@@ -32,6 +32,7 @@ namespace Characters
                 if (character != null)
                 {
                     characters.Add(character);
+                    _warriorPooling.Put(character);
                 }
             }
 
@@ -41,10 +42,11 @@ namespace Characters
                 if (goblinEnemy != null)
                 {
                     enemies.Add(goblinEnemy);
+                    _torchGoblinPooling.Put(goblinEnemy);
                 }
             }
 
-            listOfAllWarriors.Initialize(characters.ToArray(), enemies.ToArray());
+            listOfAllCharacters.Initialize(characters.ToArray(), enemies.ToArray());
         }
 
     }

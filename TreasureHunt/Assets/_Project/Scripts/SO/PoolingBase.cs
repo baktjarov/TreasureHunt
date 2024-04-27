@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace SO
@@ -46,6 +47,16 @@ namespace SO
             return result;
         }
 
+        public void Put(T toPut)
+        {
+            toPut.transform.position = Vector3.zero;
+            toPut.gameObject.SetActive(false);
+
+            toPut.transform.SetParent(_parent, false);
+
+            _targetsPool.Enqueue(toPut);
+        }
+
         public T[] GetList(int count)
         {
             List<T> result = new List<T>();
@@ -65,21 +76,10 @@ namespace SO
 
             foreach (var obj in result)
             {
-                obj.gameObject.SetActive(true);
                 obj.transform.SetParent(null, false);
             }
 
             return result.ToArray();
-        }
-
-        public void Put(T toPut)
-        {
-            toPut.transform.position = Vector3.zero;
-            toPut.gameObject.SetActive(false);
-
-            toPut.transform.SetParent(_parent, false);
-
-            _targetsPool.Enqueue(toPut);
         }
     }
 }
