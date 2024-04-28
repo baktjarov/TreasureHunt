@@ -1,3 +1,4 @@
+using Characters;
 using TagComponents;
 
 namespace StateMachine
@@ -12,6 +13,12 @@ namespace StateMachine
         public override void OnSensorExit(TagComponentBase tag)
         {
             if (tag is IShootableCharacter_Tag) { _currentVisibleEnemies.Remove(tag); }
+        }
+
+        public override void TurnDie()
+        {
+            var enemy = GetComponent<EnemyInfo>();
+            _characterManager.torchGoblinPooling.Put(enemy);
         }
     }
 }

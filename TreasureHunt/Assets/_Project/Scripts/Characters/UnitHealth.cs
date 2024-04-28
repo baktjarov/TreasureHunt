@@ -24,7 +24,7 @@ namespace Characters
             if (currentHealth <= 0)
             {
                 onDie?.Invoke();
-                Debug.Log("die");
+                
                 return;
             }
         }

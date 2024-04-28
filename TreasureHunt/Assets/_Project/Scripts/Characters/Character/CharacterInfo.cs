@@ -3,15 +3,15 @@ using Attributes;
 using Gameplay;
 using SO;
 using UnityEngine;
+using Zenject;
 
 namespace Characters
 {
     public class CharacterInfo : UnitInfo, IMouseSelectable
     {
-        [SerializeField] private ListOfAllUnits listOfAllUnits;
+        [Inject] public ListOfAllUnits listOfAllUnits;
 
         public static Action<CharacterInfo> onSelected;
-
         [field: SerializeField, ReadOnly] public bool selected { get; private set; }
 
         public void SetSelected(bool isSelected)

@@ -12,6 +12,7 @@ namespace DI.Installers
     {
         [SerializeField] private ListOfAllScenes _listOfAllScenes;
         [SerializeField] private ListOfAllMenus _listOfAllMenus;
+        [SerializeField] private ListOfAllUnits _listOfAllUnits;
 
         private InjectService _injectService = new();
 
@@ -27,6 +28,7 @@ namespace DI.Installers
         {
             Container.BindInstance(_listOfAllScenes).AsSingle();
             Container.BindInstance(_listOfAllMenus).AsSingle();
+            Container.BindInstance(_listOfAllUnits).AsSingle();
         }
 
         private void InstallService()

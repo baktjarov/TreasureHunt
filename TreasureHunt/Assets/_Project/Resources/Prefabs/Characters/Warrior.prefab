@@ -507,4 +507,6 @@ MonoBehaviour:
   _currentState: {fileID: 0}
   _startState: {fileID: 1603540250136364595}
   _visionSensor: {fileID: 5638287105763808601}
+  _health: {fileID: 6155350244024139649}
+  _characterManager: {fileID: 7219954786705776242, guid: 4376951276062d94c91ed5d8c322869a, type: 3}
   _currentVisibleEnemies: []

@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using SO;
 using UnityEngine;
+using Zenject;
 
 namespace Characters
 {
     public class CharacterManager : MonoBehaviour
     {
-        [SerializeField] private ListOfAllUnits listOfAllUnits;
+        [Inject] public ListOfAllUnits listOfAllUnits;
 
-        [Header("Components")]
-        [SerializeField] private WarriorPooling _warriorPooling;
-        [SerializeField] private TorchGoblinPooling _torchGoblinPooling;
+        [field: SerializeField] public WarriorPooling warriorPooling { get; private set; }
+        [field: SerializeField] public TorchGoblinPooling torchGoblinPooling { get; private set; }
 
         private void Awake()
         {
@@ -19,8 +19,8 @@ namespace Characters
 
         private void SetCharactersList()
         {
-            var warriorObjects = _warriorPooling.GetList(4);
-            var goblinObjects = _torchGoblinPooling.GetList(4);
+            var warriorObjects = warriorPooling.GetList(4);
+            var goblinObjects = torchGoblinPooling.GetList(4);
 
             List<CharacterInfo> characters = new List<CharacterInfo>();
             List<EnemyInfo> enemies = new List<EnemyInfo>();
@@ -31,7 +31,7 @@ namespace Characters
                 if (character != null)
                 {
                     characters.Add(character);
-                    _warriorPooling.Put(character);
+                    warriorPooling.Put(character);
                 }
             }
 
@@ -41,7 +41,7 @@ namespace Characters
                 if (enemy != null)
                 {
                     enemies.Add(enemy);
-                    _torchGoblinPooling.Put(enemy);
+                    torchGoblinPooling.Put(enemy);
                 }
             }
 

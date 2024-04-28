@@ -10,6 +10,8 @@ namespace StateMachine
     {
         [Header("Components")]
         [SerializeField] protected VisionBase _visionSensor;
+        [SerializeField] protected UnitHealth _health;
+        [SerializeField] protected CharacterManager _characterManager;
 
         [Header("Debug")]
         [SerializeField] protected List<TagComponentBase> _currentVisibleEnemies = new();
@@ -19,15 +21,18 @@ namespace StateMachine
         {
             _visionSensor.onEnter += OnSensorEnter;
             _visionSensor.onExit += OnSensorExit;
+            _health.onDie += TurnDie;
         }
 
         protected virtual void OnDisable()
         {
             _visionSensor.onEnter -= OnSensorEnter;
             _visionSensor.onExit -= OnSensorExit;
+            _health.onDie -= TurnDie;
         }
 
         public abstract void OnSensorEnter(TagComponentBase tag);
         public abstract void OnSensorExit(TagComponentBase tag);
+        public abstract void TurnDie();
     }
 }
