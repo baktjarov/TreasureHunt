@@ -6,27 +6,27 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class UnitCombat_SMState : StateBase
+    public abstract class UnitCombat_SMState : StateBase
     {
+        [Header("States")]
+        [SerializeField] protected UnitFindCharacter_SMState _findCharacterState;
+
         [Header("Components")]
-        [SerializeField] private UnitStateMachineBase _character;
-        [SerializeField] private UnitInfo _characterInfo;
+        [SerializeField] protected UnitStateMachineBase _character;
+        [SerializeField] protected UnitInfo _characterInfo;
 
         [Header("Settings")]
-        [SerializeField] private string _damageAnimKey = "isDamaging";
-        [SerializeField] private float _damage = 25;
+        [SerializeField] protected string _damageAnimKey = "isDamaging";
+        [SerializeField] protected float _damage = 25;
 
-        [Header("States")]
-        [SerializeField] private UnitFindCharacter_SMState _findCharacterState;
+        protected TagComponentBase _currentEnemy = null;
 
-        private TagComponentBase _currentEnemy = null;
-
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             _characterInfo.animationEvents.onAnimationEvent += OnAnimationEvent;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             _characterInfo.animationEvents.onAnimationEvent -= OnAnimationEvent;
         }
@@ -75,7 +75,7 @@ namespace StateMachine
             }
         }
 
-        private void OnAnimationEvent(string key)
+        protected virtual void OnAnimationEvent(string key)
         {
             if (_damageAnimKey == key)
             {

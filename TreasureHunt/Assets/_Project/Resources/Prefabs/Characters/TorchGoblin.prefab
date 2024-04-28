@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4589205263706451629}
-  - component: {fileID: 990484658781537976}
+  - component: {fileID: 1168414692876269180}
   m_Layer: 0
   m_Name: FindPlayerState
   m_TagString: Untagged
@@ -65,7 +65,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4882013856068606993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &990484658781537976
+--- !u!114 &1168414692876269180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,11 +74,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 306719093286059601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c58a6931e519504e9af4419291ee8aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 47c9654a238869d43bb928d666c68602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _combatState: {fileID: 4477957810606948904}
   _character: {fileID: 7988306696111710684}
-  _combatState: {fileID: 8226032764020509945}
+  _characterInfo: {fileID: 3486819875087188788}
+  _speed: 2
+  _currentCharacter: {fileID: 0}
+  _canSetPathForCharacter: 0
 --- !u!1 &3184498553189260416
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentState: {fileID: 0}
-  _startState: {fileID: 990484658781537976}
+  _startState: {fileID: 1168414692876269180}
   _visionSensor: {fileID: 4191912811056314202}
   _health: {fileID: 8632868141372247647}
   _characterManager: {fileID: 7219954786705776242, guid: 4376951276062d94c91ed5d8c322869a, type: 3}
@@ -368,7 +372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 50198144976462689}
-  - component: {fileID: 8226032764020509945}
+  - component: {fileID: 4477957810606948904}
   m_Layer: 0
   m_Name: CombatState
   m_TagString: Untagged
@@ -391,7 +395,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4882013856068606993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8226032764020509945
+--- !u!114 &4477957810606948904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,14 +404,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7228747759914788568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1987cc02564b4d64eb9df9482ef6850f, type: 3}
+  m_Script: {fileID: 11500000, guid: e0ac5a5e97b03c7448d670ef5d5069a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _findCharacterState: {fileID: 1168414692876269180}
   _character: {fileID: 7988306696111710684}
   _characterInfo: {fileID: 3486819875087188788}
   _damageAnimKey: isDamaging
   _damage: 0
-  _findCharacterState: {fileID: 990484658781537976}
 --- !u!1 &7703369452988202804
 GameObject:
   m_ObjectHideFlags: 0

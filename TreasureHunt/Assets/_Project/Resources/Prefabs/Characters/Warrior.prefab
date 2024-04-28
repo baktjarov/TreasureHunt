@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6582439539160277954}
-  - component: {fileID: 1603540250136364595}
+  - component: {fileID: 4053796204885247495}
   m_Layer: 0
   m_Name: FindEnemyState
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6172890631149908529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1603540250136364595
+--- !u!114 &4053796204885247495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 409299308113309182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c58a6931e519504e9af4419291ee8aa, type: 3}
+  m_Script: {fileID: 11500000, guid: acc090e3eaf22584290512b0f93b6d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 8968316121263825872}
-  _combatState: {fileID: 1972183924263928176}
+  _combatState: {fileID: 3018386048521406156}
 --- !u!1 &1420351725437683035
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4222973668343827189}
-  - component: {fileID: 1972183924263928176}
+  - component: {fileID: 3018386048521406156}
   m_Layer: 0
   m_Name: CombatState
   m_TagString: Untagged
@@ -78,7 +78,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6172890631149908529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1972183924263928176
+--- !u!114 &3018386048521406156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,14 +87,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1420351725437683035}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1987cc02564b4d64eb9df9482ef6850f, type: 3}
+  m_Script: {fileID: 11500000, guid: bf442c3820a91024e95b5afa56f92928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 8968316121263825872}
   _characterInfo: {fileID: 7281975773521999022}
   _damageAnimKey: isDamaging
   _damage: 0
-  _findCharacterState: {fileID: 1603540250136364595}
+  _findCharacterState: {fileID: 4053796204885247495}
 --- !u!1 &6480927102723052413
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentState: {fileID: 0}
-  _startState: {fileID: 1603540250136364595}
+  _startState: {fileID: 4053796204885247495}
   _visionSensor: {fileID: 5638287105763808601}
   _health: {fileID: 6155350244024139649}
   _characterManager: {fileID: 7219954786705776242, guid: 4376951276062d94c91ed5d8c322869a, type: 3}

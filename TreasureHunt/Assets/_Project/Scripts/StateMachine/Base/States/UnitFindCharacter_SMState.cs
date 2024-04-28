@@ -1,14 +1,16 @@
+using Characters;
 using UnityEngine;
 
 namespace StateMachine
 {
-    public class UnitFindCharacter_SMState : StateBase
+    public abstract class UnitFindCharacter_SMState : StateBase
     {
-        [Header("Components")]
-        [SerializeField] private UnitStateMachineBase _character;
-
         [Header("States")]
-        [SerializeField] private UnitCombat_SMState _combatState;
+        [SerializeField] protected UnitCombat_SMState _combatState;
+
+        [Header("Components")]
+        [SerializeField] protected UnitStateMachineBase _character;
+        [SerializeField] protected UnitInfo _characterInfo;
 
         public override void Enter()
         {
@@ -23,6 +25,9 @@ namespace StateMachine
             {
                 _nextState = _combatState;
             }
+            else { Chase(); }
         }
+
+        public abstract void Chase();
     }
 }
