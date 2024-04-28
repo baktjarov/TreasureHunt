@@ -32,6 +32,7 @@ namespace Mechanics
 
                 if (path.Count == 0)
                 {
+                    currentCharacter.SetSelected(false);
                     currentCharacter.SetMoving(false);
                     currentCharacter.animator.SetFloat("Forward", 0);
                 }

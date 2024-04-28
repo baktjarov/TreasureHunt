@@ -10,7 +10,6 @@ namespace StateMachine
 
         [Header("Components")]
         [SerializeField] protected UnitStateMachineBase _character;
-        [SerializeField] protected UnitInfo _characterInfo;
 
         public override void Enter()
         {
@@ -25,9 +24,6 @@ namespace StateMachine
             {
                 _nextState = _combatState;
             }
-            else { Chase(); }
         }
-
-        public abstract void Chase();
     }
 }

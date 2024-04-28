@@ -11,7 +11,6 @@ namespace Gameplay
         public int H;
         public int F { get { return G + H; } }
 
-
         public OverlayTile Previous;
         public Vector3Int gridLocation;
 

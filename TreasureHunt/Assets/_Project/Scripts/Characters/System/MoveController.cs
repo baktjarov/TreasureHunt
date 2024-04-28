@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Characters
 {
-    public class MouseController : MonoBehaviour
+    public class MoveController : MonoBehaviour
     {
         [Header("Components")]
         [SerializeField] private GameObject _cursor;
@@ -75,7 +75,6 @@ namespace Characters
         {
             if (_path.Count == 0)
             {
-                _currentCharacter.SetSelected(false);
                 _currentCharacter = null;
             }
         }

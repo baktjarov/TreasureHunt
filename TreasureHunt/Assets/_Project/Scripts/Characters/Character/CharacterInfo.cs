@@ -1,21 +1,11 @@
-using System;
-using Attributes;
-using Gameplay;
-using SO;
-using UnityEngine;
-using Zenject;
-
 namespace Characters
 {
-    public class CharacterInfo : UnitInfo, IMouseSelectable
+    public class CharacterInfo : UnitInfo
     {
-        [Inject] public ListOfAllUnits listOfAllUnits;
-
-        public static Action<CharacterInfo> onSelected;
-        [field: SerializeField, ReadOnly] public bool selected { get; private set; }
-
-        public void SetSelected(bool isSelected)
+        public override void SetSelected(bool isSelected)
         {
+            base.SetSelected(isSelected);
+
             if (selected == isSelected) { return; }
 
             selected = isSelected;
