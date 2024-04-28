@@ -18,6 +18,7 @@ namespace Characters
 
             standingTile = tile;
         }
+        
         public void SetMoving(bool isMoving)
         {
             if (moving == isMoving) { return; }

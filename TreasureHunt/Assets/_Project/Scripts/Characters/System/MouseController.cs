@@ -1,5 +1,6 @@
 using Attributes;
 using Gameplay;
+using Mechanics;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,12 +20,15 @@ namespace Characters
         [SerializeField, ReadOnly] private bool _canSetPathForCharacter = false;
 
         private List<OverlayTile> _path;
-        private PathFinder _pathFinder;
         private OverlayTile _currentTile;
+        
+        private PathFinder _pathFinder;
+        private MoveMechanic _moveMechanic;
 
         private void Awake()
         {
             _pathFinder = new PathFinder();
+            _moveMechanic = new MoveMechanic();
             _path = new List<OverlayTile>();
 
             _cursor.SetActive(false);
@@ -60,42 +64,19 @@ namespace Characters
 
             if (_path.Count > 0)
             {
-                MoveAlongPath();
+                _moveMechanic.MoveAlongPath(_path, _currentCharacter, _speed);
+                ResetCharacter();
             }
 
             ManageCursorVisibility();
         }
 
-        private void MoveAlongPath()
+        private void ResetCharacter()
         {
-            if (_path.Count < 1) { return; }
-            if (_currentCharacter == null) { return; }
-
-            var step = _speed * Time.deltaTime;
-
-            float zIndex = _path[0].transform.position.z;
-            Vector3 newPosition = Vector2.MoveTowards(_currentCharacter.transform.position, _path[0].transform.position, step);
-            newPosition.z = zIndex;
-
-            bool flipped = newPosition.x < _currentCharacter.transform.position.x;
-            _currentCharacter.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
-
-            _currentCharacter.transform.position = newPosition;
-            _currentCharacter.animator.SetFloat("Forward", newPosition.magnitude);
-            _currentCharacter.SetMoving(true);
-
-            if (Vector2.Distance(_currentCharacter.transform.position, _path[0].transform.position) < 0.00001f)
+            if (_path.Count == 0)
             {
-                _currentCharacter.SetStandingTile(_path[0]);
-                _path.RemoveAt(0);
-
-                if (_path.Count == 0)
-                {
-                    _currentCharacter.SetSelected(false);
-                    _currentCharacter.SetMoving(false);
-                    _currentCharacter.animator.SetFloat("Forward", 0);
-                    _currentCharacter = null;
-                }
+                _currentCharacter.SetSelected(false);
+                _currentCharacter = null;
             }
         }
 

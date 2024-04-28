@@ -1,4 +1,3 @@
-using Interfaces;
 using StateMachine;
 
 namespace Characters
