@@ -77,3 +77,4 @@ MonoBehaviour:
   _listOfAllScenes: {fileID: 11400000, guid: 794e8abeaab735a49a80843ff5087cbf, type: 2}
   _listOfAllMenus: {fileID: 11400000, guid: 3208116950eb22a4d8929cf790376822, type: 2}
   _listOfAllUnits: {fileID: 11400000, guid: 3e8f191ee2c4fa14d8b62a743ca62968, type: 2}
+  _listOfAllTowers: {fileID: 11400000, guid: 284c686436ef0cb46a30731d858daa78, type: 2}

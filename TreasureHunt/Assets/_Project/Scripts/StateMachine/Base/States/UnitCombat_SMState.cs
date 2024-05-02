@@ -31,11 +31,6 @@ namespace StateMachine
             _characterInfo.animationEvents.onAnimationEvent -= OnAnimationEvent;
         }
 
-        public override void Enter()
-        {
-            base.Enter();
-        }
-
         public override void Tick()
         {
             base.Tick();

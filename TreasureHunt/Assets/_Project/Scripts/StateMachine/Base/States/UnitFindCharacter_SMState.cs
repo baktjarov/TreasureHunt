@@ -1,4 +1,3 @@
-using Characters;
 using UnityEngine;
 
 namespace StateMachine
@@ -10,11 +9,6 @@ namespace StateMachine
 
         [Header("Components")]
         [SerializeField] protected UnitStateMachineBase _character;
-
-        public override void Enter()
-        {
-            base.Enter();
-        }
 
         public override void Tick()
         {

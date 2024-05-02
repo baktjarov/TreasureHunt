@@ -13,7 +13,6 @@ namespace Characters
 
         [Header("Settings")]
         [SerializeField] private float _speed;
-        [SerializeField] private LayerMask _selectableRaycastMask;
 
         [Header("Debug")]
         [SerializeField, ReadOnly] private CharacterInfo _currentCharacter;
