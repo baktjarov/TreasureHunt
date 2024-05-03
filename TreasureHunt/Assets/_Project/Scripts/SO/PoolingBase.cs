@@ -31,7 +31,7 @@ namespace SO
             }
         }
 
-        public T Get()
+        public T Get(Vector2 position)
         {
             _targetsPool.TryDequeue(out T result);
 
@@ -41,6 +41,7 @@ namespace SO
                 result = _targetsPool.Dequeue();
             }
 
+            result.transform.position = position;
             result.gameObject.SetActive(true);
             result.transform.SetParent(null, false);
 

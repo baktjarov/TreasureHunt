@@ -1,3 +1,4 @@
+using Characters;
 using UnityEngine;
 
 namespace StateMachine
@@ -9,6 +10,7 @@ namespace StateMachine
 
         [Header("Components")]
         [SerializeField] protected UnitStateMachineBase _character;
+        [SerializeField] protected UnitInfo _characterInfo;
 
         public override void Tick()
         {

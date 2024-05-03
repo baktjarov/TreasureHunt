@@ -1,3 +1,4 @@
+using SO;
 using UnityEngine;
 
 namespace StateMachine
@@ -9,6 +10,8 @@ namespace StateMachine
 
         [Header("Components")]
         [SerializeField] private TowerStateMachineBase _tower;
+        [SerializeField] private WarriorPooling _warriorPooling;
+        [SerializeField] private Transform _spawnPosition;
 
         public override void Tick()
         {
@@ -17,6 +20,11 @@ namespace StateMachine
             if(_tower._towerInfo.selected == false)
             {
                 _nextState = _idleState;
+            }
+
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                _warriorPooling.Get(_spawnPosition.position);
             }
         }
     }

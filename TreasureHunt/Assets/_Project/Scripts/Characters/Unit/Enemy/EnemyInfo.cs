@@ -5,6 +5,11 @@ namespace Characters
 {
     public class EnemyInfo : UnitInfo
     {
+        private void Update()
+        {
+            SetTileUnderCharacter();
+        }
+
         public void SetTileUnderCharacter()
         {
             OverlayTile tile = GetTileUnderCharacter<OverlayTile>();

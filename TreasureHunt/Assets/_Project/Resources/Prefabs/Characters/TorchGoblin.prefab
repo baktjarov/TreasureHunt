@@ -80,9 +80,8 @@ MonoBehaviour:
   _combatState: {fileID: 4477957810606948904}
   _character: {fileID: 7988306696111710684}
   _characterInfo: {fileID: 3486819875087188788}
+  _listOfAllTowers: {fileID: 11400000, guid: 284c686436ef0cb46a30731d858daa78, type: 2}
   _speed: 2
-  _currentCharacter: {fileID: 0}
-  _canSetPathForCharacter: 0
 --- !u!1 &3184498553189260416
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,10 +328,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed7b3acbfb19a4342b32a9c624f39604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listOfAllUnits: {fileID: 0}
   <animator>k__BackingField: {fileID: 5382458658527290086}
   <animationEvents>k__BackingField: {fileID: 5459055111920190172}
   standingTile: {fileID: 0}
   moving: 0
+  selected: 0
 --- !u!114 &8632868141372247647
 MonoBehaviour:
   m_ObjectHideFlags: 0
