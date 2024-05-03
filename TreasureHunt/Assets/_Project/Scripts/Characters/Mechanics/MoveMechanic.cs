@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using Characters;
 using Gameplay;
+using StateMachine;
 using UnityEngine;
 
 namespace Mechanics
 {
     public class MoveMechanic
     {
-        public void MoveAlongPath(List<OverlayTile> path, UnitInfo currentCharacter, float speed)
+        public void MoveAlongPath(List<OverlayTile> path, UnitInfo currentCharacter, float speed, UnitStateMachineBase unitStateMachineBase)
         {
             if (path.Count < 1) { return; }
             if (currentCharacter == null) { return; }
@@ -30,7 +31,7 @@ namespace Mechanics
                 currentCharacter.SetStandingTile(path[0]);
                 path.RemoveAt(0);
 
-                if (path.Count == 0)
+                if (path.Count == 0 || unitStateMachineBase.currentVisiableEnemies.Count > 0)
                 {
                     currentCharacter.SetSelected(false);
                     currentCharacter.SetMoving(false);

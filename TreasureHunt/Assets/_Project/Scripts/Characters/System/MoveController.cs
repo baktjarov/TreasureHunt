@@ -63,7 +63,7 @@ namespace Characters
 
             if (_path.Count > 0)
             {
-                _moveMechanic.MoveAlongPath(_path, _currentCharacter, _speed);
+                _moveMechanic.MoveAlongPath(_path, _currentCharacter, _speed, _currentCharacter.unitBase);
                 ResetCharacter();
             }
 

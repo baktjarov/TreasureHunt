@@ -33,7 +33,7 @@ namespace StateMachine
 
             if (_path.Count > 0)
             {
-                _moveMechanic.MoveAlongPath(_path, _characterInfo, _speed);
+                _moveMechanic.MoveAlongPath(_path, _characterInfo, _speed, _characterInfo.unitBase);
             }
             else
             {
@@ -43,7 +43,8 @@ namespace StateMachine
 
         private void OnTowerDetacted()
         {
-            int towerIndex = 0;
+            int towerIndex = Random.Range(0, _listOfAllTowers._towersCount);
+
             TowerInfo tower = _listOfAllTowers.GetTower(towerIndex);
             _currentTile = tower.standingTile;
 

@@ -331,6 +331,7 @@ MonoBehaviour:
   listOfAllUnits: {fileID: 0}
   <animator>k__BackingField: {fileID: 5382458658527290086}
   <animationEvents>k__BackingField: {fileID: 5459055111920190172}
+  <unitBase>k__BackingField: {fileID: 7988306696111710684}
   standingTile: {fileID: 0}
   moving: 0
   selected: 0

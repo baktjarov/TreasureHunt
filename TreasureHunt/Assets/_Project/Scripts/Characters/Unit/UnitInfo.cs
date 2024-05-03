@@ -2,6 +2,7 @@ using System;
 using Attributes;
 using Gameplay;
 using SO;
+using StateMachine;
 using UnityEngine;
 using Zenject;
 namespace Characters
@@ -12,6 +13,7 @@ namespace Characters
 
         [field: SerializeField] public Animator animator { get; private set; }
         [field: SerializeField] public AnimationEvents animationEvents { get; private set; }
+        [field: SerializeField] public UnitStateMachineBase unitBase { get; private set; }
 
         [ReadOnly] public OverlayTile standingTile;
         [ReadOnly] public bool moving;

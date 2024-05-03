@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc090e3eaf22584290512b0f93b6d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _character: {fileID: 8968316121263825872}
   _combatState: {fileID: 3018386048521406156}
+  _character: {fileID: 8968316121263825872}
+  _characterInfo: {fileID: 0}
 --- !u!1 &1420351725437683035
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,11 +91,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf442c3820a91024e95b5afa56f92928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _findCharacterState: {fileID: 4053796204885247495}
   _character: {fileID: 8968316121263825872}
   _characterInfo: {fileID: 7281975773521999022}
   _damageAnimKey: isDamaging
   _damage: 0
-  _findCharacterState: {fileID: 4053796204885247495}
 --- !u!1 &6480927102723052413
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,12 +475,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4b9a9fbe9441e4ba7365ed9503c737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listOfAllUnits: {fileID: 11400000, guid: 3e8f191ee2c4fa14d8b62a743ca62968, type: 2}
   <animator>k__BackingField: {fileID: 4753062928059839918}
   <animationEvents>k__BackingField: {fileID: 4596723549689227844}
+  <unitBase>k__BackingField: {fileID: 8968316121263825872}
   standingTile: {fileID: 0}
   moving: 0
-  listOfAllUnits: {fileID: 11400000, guid: 3e8f191ee2c4fa14d8b62a743ca62968, type: 2}
-  <selected>k__BackingField: 0
+  selected: 0
 --- !u!114 &6155350244024139649
 MonoBehaviour:
   m_ObjectHideFlags: 0
