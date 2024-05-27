@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: ListOfAllScenes
   m_EditorClassIdentifier: 
   <gameLevels>k__BackingField:
-  - <sceneName>k__BackingField: Gameplay
+  - <sceneName>k__BackingField: 1
+  - <sceneName>k__BackingField: 1
+  - <sceneName>k__BackingField: 1
+  - <sceneName>k__BackingField: 1
+  - <sceneName>k__BackingField: 1
+  - <sceneName>k__BackingField: 1
   <mainMenuScene>k__BackingField:
     <sceneName>k__BackingField: MainMenu
