@@ -1,5 +1,4 @@
 using DataClasses;
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +19,7 @@ namespace UI.Elements
             _gameLevel = gameLevel;
             _onLoadLevelRequested = onLoadLevelRequested;
 
-            _gameLevelName.text = _gameLevel.sceneName;
+            _gameLevelName.text = _gameLevel.levelNumber;
         }
 
         private void OnEnable()

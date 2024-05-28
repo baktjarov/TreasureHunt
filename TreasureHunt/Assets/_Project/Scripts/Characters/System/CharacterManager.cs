@@ -12,9 +12,17 @@ namespace Characters
         [field: SerializeField] public WarriorPooling warriorPooling { get; private set; }
         [field: SerializeField] public TorchGoblinPooling torchGoblinPooling { get; private set; }
 
+        private List<CharacterInfo> characters;
+        private List<EnemyInfo> enemies;
+
         private void Awake()
         {
             SetCharactersList();
+        }
+
+        private void OnDestroy()
+        {
+            ResetCharacterList();
         }
 
         private void SetCharactersList()
@@ -46,6 +54,24 @@ namespace Characters
             }
 
             listOfAllUnits.Initialize(enemies.ToArray(), characters.ToArray());
+        }
+
+        private void ResetCharacterList()
+        {
+            var warriorObjects = warriorPooling.GetList(4);
+            var goblinObjects = torchGoblinPooling.GetList(4);
+
+            foreach (var warriorObject in warriorObjects)
+            {
+                var character = warriorObject.GetComponent<CharacterInfo>();
+                warriorPooling.Put(character);
+            }
+
+            foreach (var goblinObject in goblinObjects)
+            {
+                var enemy = goblinObject.GetComponent<EnemyInfo>();
+                torchGoblinPooling.Put(enemy);
+            }
         }
     }
 }
