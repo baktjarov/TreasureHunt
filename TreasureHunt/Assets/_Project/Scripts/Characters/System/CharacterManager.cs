@@ -73,9 +73,12 @@ namespace Characters
                 torchGoblinPooling.Put(enemy);
             }
 
-            if (enemies != null || characters != null)
+            if (enemies != null)
             {
                 enemies.Clear();
+            }
+            else if (characters != null)
+            {
                 characters.Clear();
             }
         }

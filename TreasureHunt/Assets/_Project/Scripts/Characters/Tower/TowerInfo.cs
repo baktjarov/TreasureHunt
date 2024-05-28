@@ -21,22 +21,7 @@ namespace Characters
             SetTileUnderCharacter();
         }
 
-        public void SetSelected(bool isSelected)
-        {
-            if (selected == isSelected) { return; }
-
-            selected = isSelected;
-
-            if (selected == true)
-            {
-                foreach (TowerInfo obj in listOfAllTowers.towerObjects)
-                {
-                    if (obj != this) { obj.SetSelected(false); }
-                }
-
-                onSelected?.Invoke(this);
-            }
-        }
+        public virtual void SetSelected(bool isSelected) { }
 
         public void SetStandingTile(OverlayTile tile)
         {

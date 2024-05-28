@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class TowerSpawn_SMState : StateBase
+    public class WarriorTowerSpawn_SMState : StateBase
     {
         [Header("States")]
-        [SerializeField] private TowerIdle_SMState _idleState;
+        [SerializeField] private WarriorTowerIdle_SMState _idleState;
 
         [Header("Components")]
         [SerializeField] private TowerStateMachineBase _tower;

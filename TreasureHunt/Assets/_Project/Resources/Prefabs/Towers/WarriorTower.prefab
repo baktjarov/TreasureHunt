@@ -105,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 1358129422, guid: 82f7273e30e005546ae3955bdfb6fd42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -255,10 +255,10 @@ GameObject:
   - component: {fileID: 2101893336207524838}
   - component: {fileID: 5609318120806139068}
   - component: {fileID: 6674058566324573825}
-  - component: {fileID: 1364309023382495000}
   - component: {fileID: 4824101888720944547}
+  - component: {fileID: 2324626907250563671}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: WarriorTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,21 +365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c0d0232f6354a47906d76b5e33c5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1364309023382495000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8244595620735797827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b462c9584502e4e439d1fea7425182c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listOfAllTowers: {fileID: 11400000, guid: 284c686436ef0cb46a30731d858daa78, type: 2}
-  selected: 0
-  standingTile: {fileID: 0}
 --- !u!114 &4824101888720944547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,4 +379,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentState: {fileID: 0}
   _startState: {fileID: 3114896881591541567}
-  _towerInfo: {fileID: 1364309023382495000}
+  _towerInfo: {fileID: 2324626907250563671}
+--- !u!114 &2324626907250563671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244595620735797827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9c444039d8d5f41890b5996bd287a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listOfAllTowers: {fileID: 11400000, guid: 284c686436ef0cb46a30731d858daa78, type: 2}
+  selected: 0
+  standingTile: {fileID: 0}

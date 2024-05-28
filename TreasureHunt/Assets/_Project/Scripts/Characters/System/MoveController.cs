@@ -8,8 +8,8 @@ namespace Characters
 {
     public class MoveController : MonoBehaviour
     {
-        [Header("Components")]
-        [SerializeField] private GameObject _cursor;
+        //[Header("Components")]
+        //[SerializeField] private GameObject _cursor;
 
         [Header("Settings")]
         [SerializeField] private float _speed;
@@ -20,7 +20,7 @@ namespace Characters
 
         private List<OverlayTile> _path;
         private OverlayTile _currentTile;
-        
+
         private PathFinder _pathFinder;
         private MoveMechanic _moveMechanic;
 
@@ -30,7 +30,7 @@ namespace Characters
             _moveMechanic = new MoveMechanic();
             _path = new List<OverlayTile>();
 
-            _cursor.SetActive(false);
+            //_cursor.SetActive(false);
         }
 
         private void OnEnable()
@@ -67,7 +67,7 @@ namespace Characters
                 ResetCharacter();
             }
 
-            ManageCursorVisibility();
+            //ManageCursorVisibility();
         }
 
         private void ResetCharacter()
@@ -104,13 +104,12 @@ namespace Characters
             if (_currentCharacter != null) { return; }
 
             _currentCharacter = character;
+            _canSetPathForCharacter = _currentCharacter.standingTile != null;
 
-            if (_currentCharacter.standingTile == null)
+            /*if (_currentCharacter.standingTile == null)
             {
                 _currentCharacter.SetStandingTile(GetMouseSelectableOfType<OverlayTile>());
-            }
-
-            _canSetPathForCharacter = _currentCharacter.standingTile != null;
+            }*/
         }
 
         private void OnTileClicked(OverlayTile overlayTile)
@@ -124,7 +123,7 @@ namespace Characters
             }
         }
 
-        private void ManageCursorVisibility()
+        /*private void ManageCursorVisibility()
         {
             if (_canSetPathForCharacter == true && _currentCharacter != null)
             {
@@ -136,6 +135,6 @@ namespace Characters
             }
 
             if (_cursor.gameObject.activeSelf != _canSetPathForCharacter) { _cursor.SetActive(_canSetPathForCharacter); }
-        }
+        }*/
     }
 }
