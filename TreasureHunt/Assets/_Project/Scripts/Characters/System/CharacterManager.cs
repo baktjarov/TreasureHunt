@@ -72,6 +72,12 @@ namespace Characters
                 var enemy = goblinObject.GetComponent<EnemyInfo>();
                 torchGoblinPooling.Put(enemy);
             }
+
+            if (enemies != null || characters != null)
+            {
+                enemies.Clear();
+                characters.Clear();
+            }
         }
     }
 }
