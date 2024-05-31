@@ -7,7 +7,6 @@ namespace UI
     public class MenuBase : MonoBehaviour
     {
         private static Action<MenuBase> onMenuOpenned;
-
         protected MenuBase _backMenu;
 
         public void Construct(MenuBase backMenu)

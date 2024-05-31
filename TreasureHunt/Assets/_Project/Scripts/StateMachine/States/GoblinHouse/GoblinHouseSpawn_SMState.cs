@@ -1,4 +1,3 @@
-using SO;
 using UnityEngine;
 
 namespace StateMachine

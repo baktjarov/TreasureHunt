@@ -11,7 +11,6 @@ namespace Core.GameStates
         [Inject] private IGameStatesManager _gameStatesManager;
 
         private GameLevel _gameLevel;
-
         private Gameplay_GameState_Controller controller;
 
         public Gameplay_GameState(GameLevel gameLevel)
@@ -30,17 +29,24 @@ namespace Core.GameStates
                 controller.Initialize();
 
                 controller.model.onGoToMenuRequested.AddListener(GoToMainMenu);
+                controller.model.onGameLevelLoadRequested.AddListener(Play);
             });
         }
 
         public void Exit()
         {
             controller.model.onGoToMenuRequested.RemoveListener(GoToMainMenu);
+            controller.model.onGameLevelLoadRequested.RemoveListener(Play);
         }
 
         private void GoToMainMenu()
         {
             _gameStatesManager.ChangeState(new MainMenu_GameState());
+        }
+
+        private void Play()
+        {
+            _gameStatesManager.ChangeState(new Gameplay_GameState(_gameLevel));
         }
     }
 }

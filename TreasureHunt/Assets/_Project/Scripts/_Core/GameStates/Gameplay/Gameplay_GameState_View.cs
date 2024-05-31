@@ -10,6 +10,8 @@ namespace Core.GameStates
 
         private Gameplay_Menu _gameplay_Menu;
         private Pause_Menu _pause_Menu;
+        private Win_Menu _win_Menu;
+        private Louse_Menu _louse_Menu;
 
         public Gameplay_GameState_View(Gameplay_GameState_Model model)
         {
@@ -20,9 +22,11 @@ namespace Core.GameStates
         {
             _gameplay_Menu = Object.Instantiate(_model.listOfAllMenus.GetMenu<Gameplay_Menu>());
             _pause_Menu = Object.Instantiate(_model.listOfAllMenus.GetMenu<Pause_Menu>());
+            _win_Menu = Object.Instantiate(_model.listOfAllMenus.GetMenu<Win_Menu>());
+            _louse_Menu = Object.Instantiate(_model.listOfAllMenus.GetMenu<Louse_Menu>());
 
+            _gameplay_Menu.Construct(_pause_Menu, _win_Menu, _louse_Menu);
             _pause_Menu.Construct(_gameplay_Menu);
-            _gameplay_Menu.Construct(_pause_Menu);
 
             _gameplay_Menu.Open();
 

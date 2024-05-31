@@ -78,3 +78,4 @@ MonoBehaviour:
   _listOfAllMenus: {fileID: 11400000, guid: 3208116950eb22a4d8929cf790376822, type: 2}
   _listOfAllUnits: {fileID: 11400000, guid: 3e8f191ee2c4fa14d8b62a743ca62968, type: 2}
   _listOfAllTowers: {fileID: 11400000, guid: 284c686436ef0cb46a30731d858daa78, type: 2}
+  _currencySystem: {fileID: 9186171047858472806, guid: 34d96c5775bc0c54bbbf60849aa3a728, type: 3}

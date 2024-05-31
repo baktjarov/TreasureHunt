@@ -20,7 +20,7 @@ namespace Characters
             SetCharactersList();
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             ResetCharacterList();
         }
@@ -66,20 +66,19 @@ namespace Characters
                 var character = warriorObject.GetComponent<CharacterInfo>();
                 warriorPooling.Put(character);
             }
-
             foreach (var goblinObject in goblinObjects)
             {
                 var enemy = goblinObject.GetComponent<EnemyInfo>();
                 torchGoblinPooling.Put(enemy);
             }
 
-            if (enemies != null)
-            {
-                enemies.Clear();
-            }
-            else if (characters != null)
+            if (characters != null)
             {
                 characters.Clear();
+            }
+            else if (enemies != null)
+            {
+                enemies.Clear();
             }
         }
     }

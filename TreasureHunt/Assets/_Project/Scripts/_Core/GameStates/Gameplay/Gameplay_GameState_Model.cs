@@ -10,6 +10,7 @@ namespace Core.GameStates
     public class Gameplay_GameState_Model : IInitializable<bool>
     {
         [Inject(Id = EventStrings.onGoToMainMenuRequested)] public Signal onGoToMenuRequested { get; private set; }
+        [Inject(Id = EventStrings.onLoadLevelRequested)] public Signal onGameLevelLoadRequested { get; private set; }
 
         [Inject] public ListOfAllScenes listOfAllScenes { get; private set; }
         [Inject] public ListOfAllMenus listOfAllMenus { get; private set; }
