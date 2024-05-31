@@ -10,7 +10,9 @@ namespace Gameplay
 
         public int _currency { get; private set; } = 0;
         public int _enemyCount { get; private set; } = 0;
-        public Action _isUIUpdate;
+
+        public Action isUseCurrency;
+        public Action isSpawn;
 
         public void Init()
         {
@@ -26,11 +28,17 @@ namespace Gameplay
             UpdateUI();
         }
 
+        public void UseCurrency(int val)
+        {
+            Use(val);
+        }
+
         public bool Use(int val)
         {
             if (EnoughCurrency(val))
             {
                 _currency -= val;
+                SpawnCharacter();
                 UpdateUI();
                 return true;
             }
@@ -40,19 +48,19 @@ namespace Gameplay
             }
         }
 
-        private bool EnoughCurrency(int val)
+        public bool EnoughCurrency(int val)
         {
             return val <= _currency;
         }
 
         private void UpdateUI()
         {
-            _isUIUpdate?.Invoke();
+            isUseCurrency?.Invoke();
         }
 
-        public void USE_TEST()
+        private void SpawnCharacter()
         {
-            Debug.Log(Use(2));
+            isSpawn?.Invoke();
         }
     }
 }

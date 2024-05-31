@@ -2,7 +2,7 @@ namespace Characters
 {
     public class WarriorTowerInfo : TowerInfo
     {
-        public override void SetSelected(bool isSelected)
+        /*public override void SetSelected(bool isSelected)
         {
             if (selected == isSelected) { return; }
 
@@ -17,6 +17,6 @@ namespace Characters
 
                 onSelected?.Invoke(this);
             }
-        }
+        }*/
     }
 }

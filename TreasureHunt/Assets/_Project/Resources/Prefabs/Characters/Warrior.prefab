@@ -95,7 +95,7 @@ MonoBehaviour:
   _character: {fileID: 8968316121263825872}
   _characterInfo: {fileID: 7281975773521999022}
   _damageAnimKey: isDamaging
-  _damage: 25
+  _damage: 20
 --- !u!1 &6480927102723052413
 GameObject:
   m_ObjectHideFlags: 0
