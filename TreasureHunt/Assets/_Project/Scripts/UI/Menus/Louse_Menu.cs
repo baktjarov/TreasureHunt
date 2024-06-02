@@ -10,7 +10,7 @@ namespace UI.Menus
     public class Louse_Menu : MenuBase
     {
         [Inject(Id = EventStrings.onGoToMainMenuRequested)] private Signal _onGoToMainMenuRequested;
-        [Inject(Id = EventStrings.onLoadLevelRequested)] private Signal _onLoadLevelRequested;
+        [Inject(Id = EventStrings.onReloadLevelRequested)] private Signal _onReloadLevelRequested;
 
         [SerializeField] private Button _resumeButton;
         [SerializeField] private Button _goToMainMenuButton;
@@ -48,7 +48,7 @@ namespace UI.Menus
 
         public void OnResumeButtonClicked()
         {
-            _onLoadLevelRequested?.Invoke();
+            _onReloadLevelRequested?.Invoke();
         }
     }
 }

@@ -10,10 +10,5 @@ namespace StateMachine
         [Header("Components")]
         [SerializeField] private TowerStateMachineBase _tower;
         [SerializeField] private Transform _spawnPosition;
-
-        public override void Tick()
-        {
-            base.Tick();
-        }
     }
 }

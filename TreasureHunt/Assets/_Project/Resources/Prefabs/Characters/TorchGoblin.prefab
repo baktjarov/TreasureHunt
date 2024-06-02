@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 3184498553189260416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -363,8 +363,8 @@ MonoBehaviour:
   _startState: {fileID: 1168414692876269180}
   _visionSensor: {fileID: 4191912811056314202}
   _health: {fileID: 8632868141372247647}
-  _characterManager: {fileID: 7219954786705776242, guid: 4376951276062d94c91ed5d8c322869a, type: 3}
   _currentVisibleEnemies: []
+  torchGoblinPooling: {fileID: 0}
 --- !u!1 &7228747759914788568
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,14 +29,14 @@ namespace Core.GameStates
                 controller.Initialize();
 
                 controller.model.onGoToMenuRequested.AddListener(GoToMainMenu);
-                controller.model.onGameLevelLoadRequested.AddListener(Play);
+                controller.model.onGameLevelReloadRequested.AddListener(Replay);
             });
         }
 
         public void Exit()
         {
             controller.model.onGoToMenuRequested.RemoveListener(GoToMainMenu);
-            controller.model.onGameLevelLoadRequested.RemoveListener(Play);
+            controller.model.onGameLevelReloadRequested.RemoveListener(Replay);
         }
 
         private void GoToMainMenu()
@@ -44,7 +44,7 @@ namespace Core.GameStates
             _gameStatesManager.ChangeState(new MainMenu_GameState());
         }
 
-        private void Play()
+        private void Replay()
         {
             _gameStatesManager.ChangeState(new Gameplay_GameState(_gameLevel));
         }

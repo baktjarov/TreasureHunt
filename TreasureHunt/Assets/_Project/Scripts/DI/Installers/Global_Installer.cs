@@ -1,8 +1,6 @@
 using Core;
 using Core.GameStates;
 using Core.Interfaces;
-using DataClasses;
-using DataClasses.Static;
 using Services;
 using SO;
 using UnityEngine;

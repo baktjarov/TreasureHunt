@@ -1,21 +1,16 @@
-using System;
 using Gameplay;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
 namespace UI.Menus
 {
     public class Gameplay_Menu : MenuBase
     {
-        [Inject] public CurrencySystem _currencySystem;
-
         [SerializeField] private Button _pauseButton;
-        [SerializeField] private Button _spawnButton;
-
         [SerializeField] private TextMeshProUGUI _currencyText;
         [SerializeField] private TextMeshProUGUI _enemyCountText;
+        [SerializeField] private CurrencySystem _currencySystem;
 
         private Pause_Menu _pauseMenu;
         private Win_Menu _winMenu;
@@ -28,7 +23,7 @@ namespace UI.Menus
             _louseMenu = louse_Menu;
         }
 
-        public void Start()
+        private void Start()
         {
             _currencySystem.Init();
             UpdateUI();

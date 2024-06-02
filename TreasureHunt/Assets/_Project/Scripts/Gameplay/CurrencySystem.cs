@@ -8,8 +8,8 @@ namespace Gameplay
         [SerializeField] private int _defaultCurrency;
         [SerializeField] private int _defaultEnemyCount;
 
-        public int _currency { get; private set; } = 0;
-        public int _enemyCount { get; private set; } = 0;
+        public int _currency { get; private set; }
+        public int _enemyCount { get; private set; }
 
         public Action isUseCurrency;
         public Action isSpawn;

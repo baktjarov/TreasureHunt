@@ -783,10 +783,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33125f64460c18c4998dcfbfa7942965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currencySystem: {fileID: 9186171047858472806, guid: 34d96c5775bc0c54bbbf60849aa3a728, type: 3}
   _pauseButton: {fileID: 5910925765778926020}
   _currencyText: {fileID: 1629052931616852650}
   _enemyCountText: {fileID: 6591940769242460842}
+  _currencySystem: {fileID: 9186171047858472806, guid: 34d96c5775bc0c54bbbf60849aa3a728, type: 3}
 --- !u!1 &4458623910764157377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,7 +1486,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: UseCurrency
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8857067777115471214

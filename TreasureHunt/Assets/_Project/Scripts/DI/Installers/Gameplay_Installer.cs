@@ -11,7 +11,7 @@ namespace DI.Installers
     public class Gameplay_Installer : MonoInstaller
     {
         private Signal _onGoToMainMenuRequested = new Signal();
-        private Signal _onLoadLevelRequested = new Signal();
+        private Signal _onReloadLevelRequested = new Signal();
 
         [SerializeField] private CurrencySystem _currencySystem;
         [SerializeField] private WarriorPooling _warriorPooling;
@@ -39,8 +39,8 @@ namespace DI.Installers
 
         private void InstallSignals()
         {
+            Container.Bind<Signal>().WithId(EventStrings.onReloadLevelRequested).FromInstance(_onReloadLevelRequested);
             Container.Bind<Signal>().WithId(EventStrings.onGoToMainMenuRequested).FromInstance(_onGoToMainMenuRequested).AsSingle();
-            Container.Bind<Signal>().WithId(EventStrings.onLoadLevelRequested).FromInstance(_onLoadLevelRequested);
         }
 
         private void InstallSystems()

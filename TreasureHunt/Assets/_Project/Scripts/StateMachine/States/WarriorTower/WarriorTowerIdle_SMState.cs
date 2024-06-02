@@ -9,10 +9,5 @@ namespace StateMachine
 
         [Header("Components")]
         [SerializeField] private TowerStateMachineBase _tower;
-
-        public override void Tick()
-        {
-            base.Tick();
-        }
     }
 }

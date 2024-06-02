@@ -7,8 +7,8 @@ namespace StateMachine
 {
     public class WarriorTowerSpawn_SMState : StateBase
     {
-        [Inject] public CurrencySystem _currencySystem;
-        [Inject] public WarriorPooling _warriorPooling;
+        [Inject] private CurrencySystem _currencySystem;
+        [Inject] private WarriorPooling _warriorPooling;
 
         [Header("States")]
         [SerializeField] private WarriorTowerIdle_SMState _idleState;
