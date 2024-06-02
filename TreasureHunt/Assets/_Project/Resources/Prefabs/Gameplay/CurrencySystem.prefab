@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultCurrency: 2
-  _defaultEnemyCount: 4
+  _defaultEnemyCount: 2

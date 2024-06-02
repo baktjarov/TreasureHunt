@@ -33,7 +33,12 @@ namespace Gameplay
             Use(val);
         }
 
-        public bool Use(int val)
+        public void UseCount(int val)
+        {
+            Minus(val);
+        }
+
+        private bool Use(int val)
         {
             if (EnoughCurrency(val))
             {
@@ -48,9 +53,28 @@ namespace Gameplay
             }
         }
 
-        public bool EnoughCurrency(int val)
+        private bool Minus(int val)
+        {
+            if (EnoughCount(val))
+            {
+                _enemyCount -= val;
+                UpdateUI();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool EnoughCurrency(int val)
         {
             return val <= _currency;
+        }
+
+        private bool EnoughCount(int val)
+        {
+            return val <= _enemyCount;
         }
 
         private void UpdateUI()

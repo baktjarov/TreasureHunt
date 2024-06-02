@@ -19,6 +19,8 @@ namespace StateMachine
         {
             var enemy = GetComponent<EnemyInfo>();
             _characterManager.torchGoblinPooling.Put(enemy);
+            _currencySystem.Gain(2);
+            _currencySystem.UseCount(1);
         }
     }
 }

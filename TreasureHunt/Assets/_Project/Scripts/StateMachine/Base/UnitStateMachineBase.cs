@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Characters;
+using Gameplay;
 using Sensors;
 using TagComponents;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace StateMachine
         [SerializeField] protected VisionBase _visionSensor;
         [SerializeField] protected UnitHealth _health;
         [SerializeField] protected CharacterManager _characterManager;
+        [SerializeField] protected CurrencySystem _currencySystem;
 
         [Header("Debug")]
         [SerializeField] protected List<TagComponentBase> _currentVisibleEnemies = new();

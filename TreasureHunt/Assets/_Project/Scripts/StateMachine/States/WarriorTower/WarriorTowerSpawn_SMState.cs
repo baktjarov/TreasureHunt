@@ -10,9 +10,6 @@ namespace StateMachine
         [Inject] private CurrencySystem _currencySystem;
         [Inject] private WarriorPooling _warriorPooling;
 
-        [Header("States")]
-        [SerializeField] private WarriorTowerIdle_SMState _idleState;
-
         [Header("Components")]
         [SerializeField] private TowerStateMachineBase _tower;
         [SerializeField] private Transform _spawnPosition;

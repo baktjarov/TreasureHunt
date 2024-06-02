@@ -12,7 +12,7 @@ namespace Characters
         public float currentHealth { get; private set; }
         public float maxHealth { get; private set; } = 100;
 
-        private void Start()
+        private void OnEnable()
         {
             if (currentHealth < maxHealth) { currentHealth = maxHealth; }
         }

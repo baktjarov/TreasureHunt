@@ -511,4 +511,5 @@ MonoBehaviour:
   _visionSensor: {fileID: 5638287105763808601}
   _health: {fileID: 6155350244024139649}
   _characterManager: {fileID: 2454126209504193064, guid: e757ba41972c7794a9197cf6d5a90dc2, type: 3}
+  _currencySystem: {fileID: 9186171047858472806, guid: 34d96c5775bc0c54bbbf60849aa3a728, type: 3}
   _currentVisibleEnemies: []
