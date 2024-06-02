@@ -20,7 +20,6 @@ namespace SO
             if (_parent == null)
             {
                 _parent = new GameObject(_parentName).transform;
-                //DontDestroyOnLoad(_parent);
             }
 
             for (int i = 0; i < spawnAmount; i++)
@@ -45,6 +44,31 @@ namespace SO
             result.transform.SetParent(null, false);
 
             return result;
+        }
+
+        public T[] GetList(int count)
+        {
+            List<T> result = new List<T>();
+
+            for (int i = 0; i < count; i++)
+            {
+                if (_targetsPool.TryDequeue(out T obj))
+                {
+                    result.Add(obj);
+                }
+                else
+                {
+                    Spawn(_spawnIfPoolIsEmpty);
+                    result.Add(_targetsPool.Dequeue());
+                }
+            }
+
+            foreach (var obj in result)
+            {
+                obj.transform.SetParent(null, false);
+            }
+
+            return result.ToArray();
         }
 
         public void Put(T toPut)

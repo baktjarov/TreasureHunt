@@ -475,10 +475,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4b9a9fbe9441e4ba7365ed9503c737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listOfAllUnits: {fileID: 11400000, guid: 3e8f191ee2c4fa14d8b62a743ca62968, type: 2}
   <animator>k__BackingField: {fileID: 4753062928059839918}
   <animationEvents>k__BackingField: {fileID: 4596723549689227844}
   <unitBase>k__BackingField: {fileID: 8968316121263825872}
+  <listOfAllUnits>k__BackingField: {fileID: 11400000, guid: 3e8f191ee2c4fa14d8b62a743ca62968, type: 2}
   standingTile: {fileID: 0}
   moving: 0
   selected: 0
@@ -510,5 +510,5 @@ MonoBehaviour:
   _startState: {fileID: 4053796204885247495}
   _visionSensor: {fileID: 5638287105763808601}
   _health: {fileID: 6155350244024139649}
+  _characterManager: {fileID: 2454126209504193064, guid: e757ba41972c7794a9197cf6d5a90dc2, type: 3}
   _currentVisibleEnemies: []
-  warriorPooling: {fileID: 0}

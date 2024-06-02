@@ -16,5 +16,11 @@ namespace SO
             moveableObjects = new List<Characters.CharacterInfo>(character);
             enemyObjects = new List<EnemyInfo>(enemy);
         }
+
+        public void Clear()
+        {
+            moveableObjects = null;
+            enemyObjects = null;
+        }
     }
 }

@@ -1,21 +1,19 @@
-using System;
 using Attributes;
 using Gameplay;
-using SO;
 using UnityEngine;
-using Zenject;
 
 namespace Characters
 {
     public class TowerInfo : MonoBehaviour
     {
-        [Inject] public ListOfAllTowers listOfAllTowers;
-
         [ReadOnly] public OverlayTile standingTile;
 
-        private void Awake()
+        private void Update()
         {
-            SetTileUnderCharacter();
+            if (standingTile == null)
+            {
+                SetTileUnderCharacter();
+            }
         }
 
         public void SetStandingTile(OverlayTile tile)

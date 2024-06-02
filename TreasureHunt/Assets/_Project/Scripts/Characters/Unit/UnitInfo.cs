@@ -4,16 +4,15 @@ using Gameplay;
 using SO;
 using StateMachine;
 using UnityEngine;
-using Zenject;
+
 namespace Characters
 {
     public class UnitInfo : MonoBehaviour, IMouseSelectable
     {
-        [Inject] public ListOfAllUnits listOfAllUnits;
-
         [field: SerializeField] public Animator animator { get; private set; }
         [field: SerializeField] public AnimationEvents animationEvents { get; private set; }
         [field: SerializeField] public UnitStateMachineBase unitBase { get; private set; }
+        [field: SerializeField] public ListOfAllUnits listOfAllUnits { get; private set; }
 
         [ReadOnly] public OverlayTile standingTile;
         [ReadOnly] public bool moving;

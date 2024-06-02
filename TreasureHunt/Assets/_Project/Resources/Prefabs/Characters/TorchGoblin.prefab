@@ -328,10 +328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed7b3acbfb19a4342b32a9c624f39604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listOfAllUnits: {fileID: 11400000, guid: 3e8f191ee2c4fa14d8b62a743ca62968, type: 2}
   <animator>k__BackingField: {fileID: 5382458658527290086}
   <animationEvents>k__BackingField: {fileID: 5459055111920190172}
   <unitBase>k__BackingField: {fileID: 7988306696111710684}
+  <listOfAllUnits>k__BackingField: {fileID: 11400000, guid: 3e8f191ee2c4fa14d8b62a743ca62968, type: 2}
   standingTile: {fileID: 0}
   moving: 0
   selected: 0
@@ -363,8 +363,8 @@ MonoBehaviour:
   _startState: {fileID: 1168414692876269180}
   _visionSensor: {fileID: 4191912811056314202}
   _health: {fileID: 8632868141372247647}
+  _characterManager: {fileID: 2454126209504193064, guid: e757ba41972c7794a9197cf6d5a90dc2, type: 3}
   _currentVisibleEnemies: []
-  torchGoblinPooling: {fileID: 0}
 --- !u!1 &7228747759914788568
 GameObject:
   m_ObjectHideFlags: 0

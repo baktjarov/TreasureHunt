@@ -1,3 +1,4 @@
+using Characters;
 using DataClasses;
 using DataClasses.Static;
 using Gameplay;
@@ -14,6 +15,7 @@ namespace DI.Installers
         private Signal _onReloadLevelRequested = new Signal();
 
         [SerializeField] private CurrencySystem _currencySystem;
+        [SerializeField] private CharacterManager _characterManager;
         [SerializeField] private WarriorPooling _warriorPooling;
         [SerializeField] private TorchGoblinPooling _torchGoblinPooling;
 
@@ -46,6 +48,7 @@ namespace DI.Installers
         private void InstallSystems()
         {
             Container.Bind<CurrencySystem>().FromInstance(_currencySystem).AsSingle();
+            Container.Bind<CharacterManager>().FromInstance(_characterManager).AsSingle();
             Container.Bind<WarriorPooling>().FromInstance(_warriorPooling).AsSingle();
             Container.Bind<TorchGoblinPooling>().FromInstance(_torchGoblinPooling).AsSingle();
         }

@@ -6,7 +6,7 @@ namespace Characters
 {
     public class TowerManager : MonoBehaviour
     {
-        [Inject] public ListOfAllTowers listOfAllTowers;
+        [Inject] private ListOfAllTowers listOfAllTowers;
 
         private void Awake()
         {

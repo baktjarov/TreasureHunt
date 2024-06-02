@@ -208,8 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4fbb16398a21fc4d935440d56f8c6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currencySystem: {fileID: 0}
-  _warriorPooling: {fileID: 11400000, guid: b6dd583c5424b3c4797f001d04223537, type: 2}
   _idleState: {fileID: 3114896881591541567}
   _tower: {fileID: 4824101888720944547}
   _spawnPosition: {fileID: 8711309190796904520}
@@ -257,7 +255,7 @@ GameObject:
   - component: {fileID: 5609318120806139068}
   - component: {fileID: 6674058566324573825}
   - component: {fileID: 4824101888720944547}
-  - component: {fileID: 2324626907250563671}
+  - component: {fileID: -4071522253370226464}
   m_Layer: 0
   m_Name: WarriorTower
   m_TagString: Untagged
@@ -380,8 +378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentState: {fileID: 0}
   _startState: {fileID: 346597370806967038}
-  _towerInfo: {fileID: 2324626907250563671}
---- !u!114 &2324626907250563671
+  _towerInfo: {fileID: -4071522253370226464}
+--- !u!114 &-4071522253370226464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -390,7 +388,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8244595620735797827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9c444039d8d5f41890b5996bd287a5, type: 3}
+  m_Script: {fileID: 11500000, guid: b462c9584502e4e439d1fea7425182c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   listOfAllTowers: {fileID: 11400000, guid: 284c686436ef0cb46a30731d858daa78, type: 2}

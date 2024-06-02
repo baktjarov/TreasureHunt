@@ -3,7 +3,6 @@ using Characters;
 using Sensors;
 using TagComponents;
 using UnityEngine;
-using Zenject;
 
 namespace StateMachine
 {
@@ -12,6 +11,7 @@ namespace StateMachine
         [Header("Components")]
         [SerializeField] protected VisionBase _visionSensor;
         [SerializeField] protected UnitHealth _health;
+        [SerializeField] protected CharacterManager _characterManager;
 
         [Header("Debug")]
         [SerializeField] protected List<TagComponentBase> _currentVisibleEnemies = new();
