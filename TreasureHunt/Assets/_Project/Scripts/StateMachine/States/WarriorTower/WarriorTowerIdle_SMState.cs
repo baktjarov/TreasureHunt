@@ -13,11 +13,6 @@ namespace StateMachine
         public override void Tick()
         {
             base.Tick();
-
-            if(_tower._towerInfo.selected == true)
-            {
-                _nextState = _spawnState;
-            }
         }
     }
 }

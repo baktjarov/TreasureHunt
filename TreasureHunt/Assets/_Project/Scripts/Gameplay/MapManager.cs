@@ -27,7 +27,7 @@ namespace Gameplay
             }
         }
 
-        void Start()
+        private void Start()
         {
             map = new Dictionary<Vector2Int, OverlayTile>();
 

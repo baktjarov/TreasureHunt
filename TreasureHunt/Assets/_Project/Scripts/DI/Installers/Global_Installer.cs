@@ -1,6 +1,8 @@
 using Core;
 using Core.GameStates;
 using Core.Interfaces;
+using DataClasses;
+using DataClasses.Static;
 using Services;
 using SO;
 using UnityEngine;
@@ -23,6 +25,7 @@ namespace DI.Installers
 
             InstallSO();
             InstallService();
+            InstallInterface();
         }
 
         private void InstallSO()
@@ -35,11 +38,13 @@ namespace DI.Installers
 
         private void InstallService()
         {
+            Container.Bind<IGameStatesManager>().To<GameStatesManager>().AsSingle();
             Container.Bind<InjectService>().FromInstance(_injectService).AsSingle();
             Container.Bind<SceneLoader>().AsSingle();
+        }
 
-            Container.Bind<IGameStatesManager>().To<GameStatesManager>().AsSingle();
-
+        private void InstallInterface()
+        {
             Container.BindInterfacesTo<Init_GameState>().AsSingle();
             Container.BindInterfacesTo<Gameplay_GameState>().AsSingle();
         }

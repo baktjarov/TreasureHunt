@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: WarriorPooling
   m_EditorClassIdentifier: 
   _targetObject: {fileID: 7281975773521999022, guid: 0c123db3edbb20940b1f59664b4dda72, type: 3}
-  _spawnIfPoolIsEmpty: 4
+  _spawnIfPoolIsEmpty: 2
   _parentName: WarriorPool

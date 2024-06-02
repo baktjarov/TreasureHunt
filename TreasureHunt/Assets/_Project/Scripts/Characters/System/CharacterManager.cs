@@ -7,13 +7,16 @@ namespace Characters
 {
     public class CharacterManager : MonoBehaviour
     {
-        [Inject] public ListOfAllUnits listOfAllUnits;
+        /*[Inject] public ListOfAllUnits listOfAllUnits;
 
         [field: SerializeField] public WarriorPooling warriorPooling { get; private set; }
         [field: SerializeField] public TorchGoblinPooling torchGoblinPooling { get; private set; }
 
         private List<CharacterInfo> characters;
         private List<EnemyInfo> enemies;
+
+        private CharacterInfo[] warriorObjects;
+        private EnemyInfo[] goblinObjects;
 
         private void Awake()
         {
@@ -22,64 +25,49 @@ namespace Characters
 
         private void OnDisable()
         {
-            ResetCharacterList();
+            ResetCharactersList();
         }
 
         private void SetCharactersList()
         {
-            var warriorObjects = warriorPooling.GetList(4);
-            var goblinObjects = torchGoblinPooling.GetList(4);
+            warriorObjects = warriorPooling.GetList(2);
+            goblinObjects = torchGoblinPooling.GetList(2);
 
-            List<CharacterInfo> characters = new List<CharacterInfo>();
-            List<EnemyInfo> enemies = new List<EnemyInfo>();
+            characters = new List<CharacterInfo>();
+            enemies = new List<EnemyInfo>();
 
             foreach (var warriorObject in warriorObjects)
             {
-                var character = warriorObject.GetComponent<CharacterInfo>();
-                if (character != null)
+                if (warriorObject != null)
                 {
-                    characters.Add(character);
-                    warriorPooling.Put(character);
+                    var character = warriorObject.GetComponent<CharacterInfo>();
+                    if (character != null)
+                    {
+                        characters.Add(character);
+                        warriorPooling.Put(character);
+                    }
                 }
             }
 
             foreach (var goblinObject in goblinObjects)
             {
-                var enemy = goblinObject.GetComponent<EnemyInfo>();
-                if (enemy != null)
+                if (goblinObject != null)
                 {
-                    enemies.Add(enemy);
-                    torchGoblinPooling.Put(enemy);
+                    var enemy = goblinObject.GetComponent<EnemyInfo>();
+                    if (enemy != null)
+                    {
+                        enemies.Add(enemy);
+                        torchGoblinPooling.Put(enemy);
+                    }
                 }
             }
 
             listOfAllUnits.Initialize(enemies.ToArray(), characters.ToArray());
         }
 
-        private void ResetCharacterList()
+        private void ResetCharactersList()
         {
-            var warriorObjects = warriorPooling.GetList(4);
-            var goblinObjects = torchGoblinPooling.GetList(4);
 
-            foreach (var warriorObject in warriorObjects)
-            {
-                var character = warriorObject.GetComponent<CharacterInfo>();
-                warriorPooling.Put(character);
-            }
-            foreach (var goblinObject in goblinObjects)
-            {
-                var enemy = goblinObject.GetComponent<EnemyInfo>();
-                torchGoblinPooling.Put(enemy);
-            }
-
-            if (characters != null)
-            {
-                characters.Clear();
-            }
-            else if (enemies != null)
-            {
-                enemies.Clear();
-            }
-        }
+        }*/
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TorchGoblinPooling
   m_EditorClassIdentifier: 
   _targetObject: {fileID: 3486819875087188788, guid: 0b7774daf1f92d044afb7850556e943d, type: 3}
-  _spawnIfPoolIsEmpty: 4
+  _spawnIfPoolIsEmpty: 2
   _parentName: TorchGoblinPool

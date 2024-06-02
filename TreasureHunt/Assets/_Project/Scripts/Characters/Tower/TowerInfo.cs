@@ -7,21 +7,16 @@ using Zenject;
 
 namespace Characters
 {
-    public class TowerInfo : MonoBehaviour, IMouseSelectable
+    public class TowerInfo : MonoBehaviour
     {
         [Inject] public ListOfAllTowers listOfAllTowers;
 
-        [field: SerializeField, ReadOnly] public bool selected;
-        public static Action<TowerInfo> onSelected;
-
         [ReadOnly] public OverlayTile standingTile;
 
-        private void Update()
+        private void Awake()
         {
             SetTileUnderCharacter();
         }
-
-        public virtual void SetSelected(bool isSelected) { }
 
         public void SetStandingTile(OverlayTile tile)
         {

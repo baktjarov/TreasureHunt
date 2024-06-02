@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18dc438adc51d04983dc1b1c3d8f702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultCurrency: 5
-  _defaultEnemyCount: 4
+  _defaultCurrency: 2
+  _defaultEnemyCount: 1

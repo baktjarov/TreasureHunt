@@ -8,9 +8,6 @@ namespace Characters
 {
     public class MoveController : MonoBehaviour
     {
-        //[Header("Components")]
-        //[SerializeField] private GameObject _cursor;
-
         [Header("Settings")]
         [SerializeField] private float _speed;
 
@@ -29,8 +26,6 @@ namespace Characters
             _pathFinder = new PathFinder();
             _moveMechanic = new MoveMechanic();
             _path = new List<OverlayTile>();
-
-            //_cursor.SetActive(false);
         }
 
         private void OnEnable()
@@ -66,8 +61,6 @@ namespace Characters
                 _moveMechanic.MoveAlongPath(_path, _currentCharacter, _speed, _currentCharacter.unitBase);
                 ResetCharacter();
             }
-
-            //ManageCursorVisibility();
         }
 
         private void ResetCharacter()
@@ -105,11 +98,6 @@ namespace Characters
 
             _currentCharacter = character;
             _canSetPathForCharacter = _currentCharacter.standingTile != null;
-
-            /*if (_currentCharacter.standingTile == null)
-            {
-                _currentCharacter.SetStandingTile(GetMouseSelectableOfType<OverlayTile>());
-            }*/
         }
 
         private void OnTileClicked(OverlayTile overlayTile)
@@ -122,19 +110,5 @@ namespace Characters
                 _canSetPathForCharacter = false;
             }
         }
-
-        /*private void ManageCursorVisibility()
-        {
-            if (_canSetPathForCharacter == true && _currentCharacter != null)
-            {
-                OverlayTile hoverOverlayTile = GetMouseSelectableOfType<OverlayTile>();
-                if (hoverOverlayTile != null)
-                {
-                    _cursor.transform.position = hoverOverlayTile.transform.position;
-                }
-            }
-
-            if (_cursor.gameObject.activeSelf != _canSetPathForCharacter) { _cursor.SetActive(_canSetPathForCharacter); }
-        }*/
     }
 }

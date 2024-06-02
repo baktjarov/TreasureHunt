@@ -6,7 +6,7 @@ namespace Characters
 {
     public class SpawnController : MonoBehaviour
     {
-        [Header("Debug")]
+        /*[Header("Debug")]
         [SerializeField, ReadOnly] private TowerInfo _currentTower;
 
         private void OnEnable()
@@ -63,6 +63,6 @@ namespace Characters
             if (_currentTower != null) { return; }
 
             _currentTower = tower;
-        }
+        }*/
     }
 }
