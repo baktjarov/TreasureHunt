@@ -25,7 +25,7 @@ namespace Core.GameStates
             _win_Menu = Object.Instantiate(_model.listOfAllMenus.GetMenu<Win_Menu>());
             _louse_Menu = Object.Instantiate(_model.listOfAllMenus.GetMenu<Louse_Menu>());
 
-            _gameplay_Menu.Construct(_pause_Menu, _win_Menu, _louse_Menu);
+            _gameplay_Menu.Construct(_louse_Menu, _win_Menu, _pause_Menu);
             _pause_Menu.Construct(_gameplay_Menu);
 
             _gameplay_Menu.Open();

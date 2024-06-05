@@ -12,7 +12,7 @@ namespace UI.Menus
         [Inject(Id = EventStrings.onGoToMainMenuRequested)] private Signal _onGoToMainMenuRequested;
         [Inject(Id = EventStrings.onReloadLevelRequested)] private Signal _onReloadLevelRequested;
 
-        [SerializeField] private Button _resumeButton;
+        //[SerializeField] private Button _resumeButton;
         [SerializeField] private Button _goToMainMenuButton;
 
         private InjectService _injectService;
@@ -29,7 +29,7 @@ namespace UI.Menus
         {
             base.Open();
 
-            _resumeButton.onClick.AddListener(OnResumeButtonClicked);
+            //_resumeButton.onClick.AddListener(OnResumeButtonClicked);
             _goToMainMenuButton.onClick.AddListener(OnGoToMainMenuClicked);
         }
 
@@ -37,7 +37,7 @@ namespace UI.Menus
         {
             base.Close();
 
-            _resumeButton.onClick.RemoveListener(OnResumeButtonClicked);
+            //_resumeButton.onClick.RemoveListener(OnResumeButtonClicked);
             _goToMainMenuButton.onClick.RemoveListener(OnGoToMainMenuClicked);
         }
 

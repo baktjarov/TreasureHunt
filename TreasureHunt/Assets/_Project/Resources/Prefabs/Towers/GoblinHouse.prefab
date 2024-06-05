@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 1820131983698911949}
   - component: {fileID: 819278144152458938}
   - component: {fileID: 2171380608931176702}
+  - component: {fileID: -3380200876573814693}
   m_Layer: 0
   m_Name: GoblinHouse
   m_TagString: Untagged
@@ -332,6 +333,7 @@ MonoBehaviour:
   _currentState: {fileID: 0}
   _startState: {fileID: 5633018555985661078}
   _towerInfo: {fileID: 2171380608931176702}
+  _health: {fileID: -3380200876573814693}
 --- !u!114 &2171380608931176702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,3 +347,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingTile: {fileID: 0}
+--- !u!114 &-3380200876573814693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244595620735797827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1203f9bd848c544dbf51574e22ed411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
