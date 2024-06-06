@@ -9,6 +9,7 @@ namespace Services
     public class SceneLoader_Coroutine : ISceneLoader
     {
         private readonly CoroutineRunner _coroutineRunner;
+        private readonly IEnumerator _wait = new WaitForSecondsRealtime(0.25f);
 
         public SceneLoader_Coroutine(CoroutineRunner coroutineRunner)
         {
@@ -25,7 +26,7 @@ namespace Services
             var handle = SceneManager.LoadSceneAsync(sceneName);
             while (handle.isDone == false)
             {
-                yield return new WaitForSeconds(0.25f);
+                yield return _wait;
             }
 
             onLoaded.Invoke();

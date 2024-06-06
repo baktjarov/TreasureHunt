@@ -1,5 +1,6 @@
 ﻿using Core.Interfaces;
 using DataClasses;
+using Interfaces;
 using Services;
 using Zenject;
 
@@ -7,7 +8,7 @@ namespace Core.GameStates
 {
     public class Gameplay_GameState : IGameState
     {
-        [Inject] private SceneLoader _sceneLoader;
+        [Inject] private ISceneLoader _sceneLoader;
         [Inject] private IGameStatesManager _gameStatesManager;
 
         private GameLevel _gameLevel;

@@ -1,6 +1,7 @@
 ﻿using Core.Interfaces;
 using DataClasses;
 using GameStates;
+using Interfaces;
 using Services;
 using SO;
 using Zenject;
@@ -10,7 +11,7 @@ namespace Core.GameStates
     public class MainMenu_GameState : IGameState
     {
         [Inject] private ListOfAllScenes _listOfAllScenes;
-        [Inject] private SceneLoader _sceneLoader;
+        [Inject] private ISceneLoader _sceneLoader;
         [Inject] private IGameStatesManager _gameStatesManager;
 
         private MainMenu_GameState_Controller controller;
